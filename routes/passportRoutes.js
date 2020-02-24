@@ -1,8 +1,8 @@
 const passport = require("passport");
 const express = require("express");
 const router = express.Router();
-const db = require("./models");
-var isAuthenticated = require("./config/middleware/isAuthenticated");
+const db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 router.post("/api/register", function(req, res) {
   console.log("registering user");
