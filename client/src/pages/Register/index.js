@@ -6,10 +6,13 @@ import "./style.css";
 
 class Register extends Component {
   state = {
+    firstName: "",
+    lastName: "",
     username: "",
     email: "",
     password: "",
     confirm: "",
+    birthday: "",
     validUN: false,
     validEM: false,
     validPW: false,
@@ -59,9 +62,12 @@ class Register extends Component {
   register = event => {
     event.preventDefault();
     API.register({
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
       username: this.state.username.toLowerCase(),
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      birthday: this.state.birthday
     })
       .then(res => {
         if (res.data.message) {
@@ -97,6 +103,36 @@ class Register extends Component {
       <div className="container registerContainer">
         <form>
         <FormGroup>
+          <Label text="First Name" />
+          <Input
+            name="firstName"
+            value={this.state.firstName}
+            onChange={this.handleInputChange}
+            placeholder="First Name"
+            type="text"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label text="Last Name" />
+          <Input
+            name="lastName"
+            value={this.state.lastName}
+            onChange={this.handleInputChange}
+            placeholder="Last Name"
+            type="text"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label text="Birthday" />
+          <Input
+            name="birthday"
+            value={this.state.birthday}
+            onChange={this.handleInputChange}
+            placeholder="MM/DD/YYYY"
+            type="date"
+          />
+        </FormGroup>
+        <FormGroup>
           <Label text="Username" />
           <Input
             name="username"
@@ -106,8 +142,8 @@ class Register extends Component {
             type="text"
           />
           {this.state.validUN ? <Small text="Username is available" /> : <Small text="Username is not available" />}
-          </FormGroup>
-          <FormGroup>
+        </FormGroup>
+        <FormGroup>
           <Label text="Email" />
           <Input
             name="email"
@@ -117,8 +153,8 @@ class Register extends Component {
             type="email"
           />
           {this.state.validEM ? <Small text="Email is valid" /> : <Small text="Email is invalid" />}
-          </FormGroup>
-          <FormGroup>
+        </FormGroup>
+        <FormGroup>
           <Label text="Password" />
           <Input
             name="password"
@@ -128,8 +164,8 @@ class Register extends Component {
             type="password"
           />
           {this.state.validPW ? <Small text="Password is valid" /> : <Small text="Password must be at least 8 characters" />}
-          </FormGroup>
-          <FormGroup>
+        </FormGroup>
+        <FormGroup>
           <Label text="Confirm Password" />
           <Input
             name="confirm"
@@ -138,7 +174,7 @@ class Register extends Component {
             type="password"
           />
           {this.state.validCF ? <Small text="Passwords match" /> : <Small text="Passwords don't match" />}
-          </FormGroup>
+        </FormGroup>
           {this.state.error ? <Small text={this.state.error} /> : ""}
 
           <FormGroup>

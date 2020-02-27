@@ -5,11 +5,11 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const User = new Schema({
   isAdmin: {
     type: Boolean,
-    required: "isAdmin is Required"
+    default: false
   },
   isTrainer: {
     type: Boolean,
-    required: "isTrainer is Required"
+    default: false
   },
   firstName: {
     type: String,
@@ -21,22 +21,23 @@ const User = new Schema({
     trim: true,
     required: "lastName is Required"
   },
+  birthday: {
+    type: Date,
+    required: "birthday is Required"
+  },
   email: {
     type: String,
     required: 'Email address is required',
     unique: true,
     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email address']
   },
-  birthDate: {
-    type: Date,
-    required: "birthDate is Required"
-  },
   membership: {
     type: Schema.Types.ObjectId,
-    ref: "Membership"
+    ref: "Membership",
   },
   membershipStatus: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   created: { type: Date, required: true, default: Date.now() },
 });
