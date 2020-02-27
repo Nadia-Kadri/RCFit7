@@ -64,4 +64,40 @@ router.get("/authorized", isAuthenticated, function(req, res) {
   res.json(req.user);
 });
 
+// Get route for Admin to view which trainer to select when creating a scheduled class
+router.get("/trainers", function(req, res) {
+  console.log("available trainers");
+  
+  db.User.find({ isTrainer: true })
+    .then(result => {
+      console.log(result)
+      res.json(result)
+    })
+    .catch(err => console.log(err.message));
+});
+
+// Put route for Admin to update a user and make them a trainer
+router.put("/create/trainer/:id", function(req, res) {
+  console.log("updating user to isTrainer: true")
+
+  db.User.findOneAndUpdate({ _id: req.params.id }, {$set: {isTrainer: true}})
+    .then(result => {
+      console.log(result)
+      res.json(result)
+    })
+    .catch(err => console.log(err.message));
+});
+
+// Put route for Admin to update a user so they are no longer a trainer
+router.put("/delete/trainer/:id", function(req, res) {
+  console.log("updating user to isTrainer: false")
+
+  db.User.findOneAndUpdate({ _id: req.params.id }, {$set: {isTrainer: false}})
+    .then(result => {
+      console.log(result)
+      res.json(result)
+    })
+    .catch(err => console.log(err.message));
+});
+
 module.exports = router;

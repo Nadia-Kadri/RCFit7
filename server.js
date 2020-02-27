@@ -21,7 +21,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/RCFit7", { useNewUrlParser: true });
+const options = {
+  useNewUrlParser: true,
+  useFindAndModify: false
+};
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/RCFit7", options);
 
 // ROUTES
 app.use(routes);
