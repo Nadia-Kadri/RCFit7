@@ -1,18 +1,17 @@
 import React from "react";
-import { FormBtn } from "../components/Form";
-import { Col, Row, Container } from "../components/Grid";
-import Navbar from "../components/Nav/Navbar";
-import Sidebox from "../components/Sidebox/Sidebox";
 
-function Home() {
+function Home({logout}) {
   return (
-    <React.Fragment>
-      <Container>
-        <Row>
-          <Col size="md-12"></Col>
-        </Row>
-      </Container>
-    </React.Fragment>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-12">
+          <div style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }} className="jumbotron">
+            <h1>Welcome to the Home Page</h1>
+            <button className="btn-primary logoutBtn" onClick={logout}>Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

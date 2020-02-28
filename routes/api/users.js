@@ -9,6 +9,10 @@ router.post("/register", function(req, res) {
   console.log("registering user");
 
   //Do password validation here before attempting to register user, such as checking for password length, captial letters, special characters, etc.
+  // let errors = [];
+  // if(!name || !email || !password || !password2) {
+  //   errors.push({ msg: 'Please fill in all fields' })
+  // }
 
   db.User.register(
     new db.User({ firstName: req.body.firstName, lastName: req.body.lastName, birthday: req.body.birthday, username: req.body.username, email: req.body.email }),
