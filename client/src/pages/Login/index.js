@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { FormGroup, Input, Label, Small, FormBtn } from "../../components/Form";
 import API from "../../utils/API";
 import "./style.css";
 
@@ -57,33 +56,34 @@ class Login extends Component {
           (<Redirect to={this.state.redirect === "/login" ? "/" : this.state.redirect} />) : (
             <div className="container loginContainer">
               <form>
-                <FormGroup>
-                  <Label text="Username" />
-                  <Input
+                <div className="form-group">
+                  <label>Username</label>
+                  <input 
+                    type="text"
+                    className="form-control"
                     name="username"
                     value={this.state.username}
                     onChange={this.handleInputChange}
-                    type="text"
                   />
-                </FormGroup>
-                <FormGroup>
-                  <Label text="Password" />
-                  <Input
+                </div>
+                <div className="form-group">
+                  <label>Password</label>
+                  <input 
+                    type="password"
+                    className="form-control"
                     name="password"
                     value={this.state.password}
                     onChange={this.handleInputChange}
-                    type="password"
                   />
-                </FormGroup>
-                {this.state.error ? <Small text={this.state.error} /> : ""}
-                <FormBtn
+                </div>
+                {this.state.error ? <small>{this.state.error}</small> : ""}
+                <button
+                  className="btn btn-primary"
                   disabled={
                     this.state.username && this.state.password ? "" : "disabled"
                   }
-                  text="Login"
                   onClick={this.login}
-                  classes="btn-primary"
-                />
+                >Login</button>
                 <Link to="/register">Not registered? Click here.</Link>
               </form>
             </div>

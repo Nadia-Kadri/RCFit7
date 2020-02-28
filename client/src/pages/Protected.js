@@ -1,24 +1,17 @@
 import React from "react";
-import { FormBtn } from "../components/Form";
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
 
 function Protected({logout}) {
   return (
-    <Container fluid>
-      <Row>
-        <Col size="md-12">
-          <Jumbotron>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-12">
+          <div style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }} className="jumbotron">
             <h1>Welcome to the Protected Page</h1>
-            <FormBtn
-              text="Logout"
-              onClick={logout}
-              classes="btn-primary logoutBtn"
-            />
-          </Jumbotron>
-        </Col>
-      </Row>
-    </Container>
+            <button className="btn-primary logoutBtn" onClick={logout}>Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

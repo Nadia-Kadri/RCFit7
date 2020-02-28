@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { FormGroup, Input, Label, Small, FormBtn } from "../../components/Form";
 import API from "../../utils/API";
 import "./style.css";
 
@@ -102,94 +101,100 @@ class Register extends Component {
     return (
       <div className="container registerContainer">
         <form>
-        <FormGroup>
-          <Label text="First Name" />
-          <Input
+        <div className="form-group">
+          <label>First Name</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="First Name"
             name="firstName"
             value={this.state.firstName}
             onChange={this.handleInputChange}
-            placeholder="First Name"
-            type="text"
           />
-        </FormGroup>
-        <FormGroup>
-          <Label text="Last Name" />
-          <Input
+        </div>
+        <div className="form-group">
+          <label>Last Name</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Last Name"
             name="lastName"
             value={this.state.lastName}
             onChange={this.handleInputChange}
-            placeholder="Last Name"
-            type="text"
           />
-        </FormGroup>
-        <FormGroup>
-          <Label text="Birthday" />
-          <Input
+        </div>
+        <div className="form-group">
+          <label>Birthday</label>
+          <input
+            type="date"
+            className="form-control"
+            placeholder="MM/DD/YYYY"
             name="birthday"
             value={this.state.birthday}
             onChange={this.handleInputChange}
-            placeholder="MM/DD/YYYY"
-            type="date"
           />
-        </FormGroup>
-        <FormGroup>
-          <Label text="Username" />
-          <Input
+        </div>
+        <div className="form-group">
+          <label>Username</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="at least 8 characters"
             name="username"
             value={this.state.username}
             onChange={this.handleInputChange}
-            placeholder="at least 8 characters"
-            type="text"
           />
-          {this.state.validUN ? <Small text="Username is available" /> : <Small text="Username is not available" />}
-        </FormGroup>
-        <FormGroup>
-          <Label text="Email" />
-          <Input
+          {this.state.validUN ? <small>Username is available</small> : <small>Username is not available</small>}
+        </div>
+        <div className="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Email"
             name="email"
             value={this.state.email}
             onChange={this.handleInputChange}
-            placeholder="Email"
-            type="email"
           />
-          {this.state.validEM ? <Small text="Email is valid" /> : <Small text="Email is invalid" />}
-        </FormGroup>
-        <FormGroup>
-          <Label text="Password" />
-          <Input
+          {this.state.validEM ? <small>Email is valid</small> : <small>Email is invalid</small>}
+        </div>
+        <div className="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            className="form-control"
+            placeholder="at least 8 characters"
             name="password"
             value={this.state.password}
             onChange={this.handleInputChange}
-            placeholder="at least 8 characters"
-            type="password"
           />
-          {this.state.validPW ? <Small text="Password is valid" /> : <Small text="Password must be at least 8 characters" />}
-        </FormGroup>
-        <FormGroup>
-          <Label text="Confirm Password" />
-          <Input
+          {this.state.validPW ? <small>Password is valid</small> : <small>Password must be at least 8 characters</small>}
+        </div>
+        <div className="form-group">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            className="form-control"
             name="confirm"
             value={this.state.confirm}
             onChange={this.handleInputChange}
-            type="password"
           />
-          {this.state.validCF ? <Small text="Passwords match" /> : <Small text="Passwords don't match" />}
-        </FormGroup>
-          {this.state.error ? <Small text={this.state.error} /> : ""}
+          {this.state.validCF ? <small>Passwords match</small> : <small>Passwords don't match</small>}
+        </div>
+          {this.state.error ? <small>{this.state.error}</small>  : ""}
 
-          <FormGroup>
-            <FormBtn
+          <div className="form-group">
+            <button 
+              className="btn btn-primary"
               disabled={
                 this.state.validUN && this.state.validEM && this.state.validCF
                   ? ""
                   : "disabled"
               }
-              text="Submit"
               onClick={this.register}
-              classes="btn-primary"
-            />
+            >Submit</button>
             <Link to="/login">Already registered? Click here.</Link>
-          </FormGroup>
+          </div>
         </form>
       </div>
     );
