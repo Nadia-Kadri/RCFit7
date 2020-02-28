@@ -2,17 +2,11 @@ const express = require("express");
 const router = express.Router();
 const db = require("../../models");
 
-const dummySchedule = {
-  datetime: new Date(),
-  class: "5e57e28914d73207a2af4be8",
-  trainer: "5e57d381ebe59b98ff5d24a4"
-}
-
 // Post route for Admin to create a scheduled class
 router.post("/create", function(req, res) {
   console.log("creating schedule");
 
-  db.Schedule.create(dummySchedule)
+  db.Schedule.create({ datetime: req.body.datetime, class: req.body.class, trainer: req.body.trainer })
   .then(result => {
     console.log(result)
     res.send(result)
