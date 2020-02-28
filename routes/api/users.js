@@ -81,10 +81,7 @@ router.put("/create/trainer/:id", function(req, res) {
   console.log("updating user to isTrainer: true")
 
   db.User.findOneAndUpdate({ _id: req.params.id }, {$set: {isTrainer: true}})
-    .then(result => {
-      console.log(result)
-      res.json(result)
-    })
+    .then(() => res.json("Trainer Added"))
     .catch(err => console.log(err.message));
 });
 
@@ -93,10 +90,7 @@ router.put("/delete/trainer/:id", function(req, res) {
   console.log("updating user to isTrainer: false")
 
   db.User.findOneAndUpdate({ _id: req.params.id }, {$set: {isTrainer: false}})
-    .then(result => {
-      console.log(result)
-      res.json(result)
-    })
+    .then(() => res.json("Trainer Deleted"))
     .catch(err => console.log(err.message));
 });
 

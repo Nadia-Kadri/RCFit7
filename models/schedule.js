@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const Schedule = new Schema({
   datetime: {
     type: Date,
-    required: "Date and Time is Required"
+    required: "Date and Time is Required",
+    unique: true
   },
   class: {
     type: Schema.Types.ObjectId,
