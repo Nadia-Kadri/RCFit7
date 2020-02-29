@@ -1,5 +1,7 @@
 import React from "react";
-import { name, image1 } from "../media";
+import image from "../images/meghan-holmes-wy_L8W0zcpI-unsplash.jpg";
+import image2 from "../images/bruce-mars-ZXq7xoo98b0-unsplash.jpg";
+import image3 from "../images/adult-cutting-daylight-facial-expression-1153369.jpg";
 
 class About extends React.Component {
   render() {
@@ -13,7 +15,11 @@ class About extends React.Component {
           <div className="card mb-3" style={{ maxwidth: "100%" }}>
             <div className="row no-gutters">
               <div className="col-md-4">
-                <img src={image1} className="card-img" alt={name} />
+                <img
+                  src={image}
+                  className="card-img"
+                  alt="Girls doing box jumps"
+                />
               </div>
               <div className="col-sm">
                 <div className="card-body">
@@ -34,7 +40,7 @@ class About extends React.Component {
             <div className="row no-gutters">
               <div className="col-md-4">
                 <img
-                  src="../public/images/meghan-holmes-wy_L8W0zcpI-unsplash.jpg"
+                  src={image2}
                   className="card-img"
                   alt="Girls Doing Box Jumps"
                 />
@@ -58,7 +64,7 @@ class About extends React.Component {
             <div className="row no-gutters">
               <div className="col-md-4">
                 <img
-                  src="../public/images/meghan-holmes-wy_L8W0zcpI-unsplash.jpg"
+                  src={image3}
                   className="card-img"
                   alt="Girls Doing Box Jumps"
                 />
@@ -75,14 +81,6 @@ class About extends React.Component {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="row justify-content-start">
-          <div className="col-sm">Culture</div>
-        </div>
-
-        <div className="row justify-content-center">
-          <div className="col-sm">Lifestyle</div>
         </div>
       </React.Fragment>
     );
