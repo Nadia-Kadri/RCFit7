@@ -38,13 +38,29 @@ class Navbar extends React.Component {
                 </span>
               </Link>
             </div>
-            <Link to="/login">
-              <span className="float-right">
-                <button>Login / Sign-Up</button>
-              </span>
-            </Link>
+
+            {console.log(this.props.authorized)}
+            {this.props.authorized ? (<button className="btn-primary" onClick={this.props.logout}>Logout</button>) : (
+                  <Link to="/login">
+                    <span className="float-right">
+                      <button>Login / Sign-Up</button>
+                    </span>
+                  </Link>
+                  )}
+
+            
+
+
+
+
           </div>
         </nav>
+
+
+
+
+
+
         <nav className="navbar fixed-bottom navbar-light bg-light">
           <a className="navbar-brand text-center" href="#">
             231B North Village Blvd. <br />
