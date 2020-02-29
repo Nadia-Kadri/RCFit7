@@ -6,7 +6,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import MembershipOptions from "./pages/MembershipOptions";
-import Schedule from "./pages/Schedule";
+import Schedule from "./pages/Schedule/Schedule";
 import Contact from "./pages/Contact";
 // import Protected from "./pages/Protected";
 import API from "./utils/userAPI";
