@@ -9,7 +9,7 @@ import MembershipOptions from "./pages/MembershipOptions";
 import Schedule from "./pages/Schedule";
 import Contact from "./pages/Contact";
 // import Protected from "./pages/Protected";
-import API from "./utils/API";
+import API from "./utils/userAPI";
 
 class App extends Component {
   state = {
