@@ -4,7 +4,11 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
-import Protected from "./pages/Protected";
+import About from "./pages/About";
+import MembershipOptions from "./pages/MembershipOptions";
+import Schedule from "./pages/Schedule";
+import Contact from "./pages/Contact";
+// import Protected from "./pages/Protected";
 import API from "./utils/API";
 
 class App extends Component {
@@ -71,13 +75,29 @@ class App extends Component {
                   )}
               </Route>
 
-              <Route exact path="/protected">
+              <Route exact path="/about">
+                <About />
+              </Route>
+
+              <Route exact path="/membershipOptions">
+                <MembershipOptions />
+              </Route>
+
+              <Route exact path="/schedule">
+                <Schedule />
+              </Route>
+
+              <Route exact path="/contact">
+                <Contact />
+              </Route>
+
+              {/* <Route exact path="/protected">
                 {this.state.authorized ? (
                   <Protected logout={this.logout} />
                 ) : (
                     <Redirect to="/login" />
                   )}
-              </Route>
+              </Route> */}
 
               <Route>
                 <Redirect to="/" />
