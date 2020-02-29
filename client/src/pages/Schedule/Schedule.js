@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import API from "../utils/scheduleAPI";
+import API from "../../utils/scheduleAPI";
+import ScheduledClass from "./ScheduledClass";
 
 class Schedule extends Component {
   state = {
@@ -23,6 +24,7 @@ class Schedule extends Component {
     return (
       <React.Fragment>
         <h1>Schedule Page</h1>
+        <ScheduledClass />
       </React.Fragment>
     );
   }
