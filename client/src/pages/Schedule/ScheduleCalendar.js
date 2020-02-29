@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/scheduleAPI";
-import BigCalendar from "react-big-calendar";
+import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-const localizer = BigCalendar.momentLocalizer(moment) 
+const localizer = momentLocalizer(moment) 
 
 class ScheduleCalendar extends Component {
   state = {
@@ -40,7 +40,7 @@ class ScheduleCalendar extends Component {
   render() {
     return (
       <div className="App">
-        <BigCalendar
+        <Calendar
           localizer={localizer}
           defaultDate={new Date()}
           defaultView="week"
