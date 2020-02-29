@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
@@ -56,14 +52,11 @@ class App extends Component {
       <Router>
         {this.state.display ? (
           <div>
+            <Navbar />
             <Switch>
 
               <Route exact path="/">
-                {this.state.authorized ? (
-                  <Home logout={this.logout} />
-                ) : (
-                    <Redirect to="/login" />
-                  )}
+                <Home logout={this.logout} />
               </Route>
 
               <Route exact path="/login">

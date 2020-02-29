@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import API from "../../utils/API";
-import "./style.css";
+import API from "../utils/API";
 
 class Login extends Component {
   state = {
@@ -54,7 +53,7 @@ class Login extends Component {
         {this.props.authorized ?
           //if login component was triggered by its own path, redirect to home page
           (<Redirect to={this.state.redirect === "/login" ? "/" : this.state.redirect} />) : (
-            <div className="container loginContainer">
+            <div className="container" style={contStyle}>
               <form>
                 <div className="form-group">
                   <label>Username</label>
@@ -92,6 +91,10 @@ class Login extends Component {
       </React.Fragment>
     );
   }
+}
+
+const contStyle = {
+  width: "300px"
 }
 
 export default Login;

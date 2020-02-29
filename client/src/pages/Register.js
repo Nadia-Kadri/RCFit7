@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import API from "../../utils/API";
-import "./style.css";
+import API from "../utils/API";
 
 class Register extends Component {
   state = {
@@ -99,7 +98,7 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="container registerContainer">
+      <div className="container" style={contStyle}>
         <form>
         <div className="form-group">
           <label>First Name</label>
@@ -199,6 +198,10 @@ class Register extends Component {
       </div>
     );
   }
+}
+
+const contStyle = {
+  width: "300px"
 }
 
 export default Register;
