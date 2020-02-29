@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
-class ScheduledClass extends Component {
+class UpcomingClass extends Component {
 
   render() {
     return (
       <React.Fragment>
-        <p>Class1</p>
+        <p>Class</p>
       </React.Fragment>
     );
   }
 }
 
-export default ScheduledClass;
+export default UpcomingClass;
