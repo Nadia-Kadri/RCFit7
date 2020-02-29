@@ -52,7 +52,7 @@ class App extends Component {
       <Router>
         {this.state.display ? (
           <div>
-            <Navbar />
+            <Navbar logout={this.logout} authorized={this.state.authorized}/>
             <Switch>
 
               <Route exact path="/">
