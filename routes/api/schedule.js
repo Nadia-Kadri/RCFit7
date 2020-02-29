@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../../models");
+var isAuthenticated = require("../../config/middleware/isAuthenticated");
 
 // Post route for Admin to create a scheduled class
 router.post("/create", function(req, res) {
