@@ -12,13 +12,11 @@ class Schedule extends Component {
 
   getEvents = () => {
     API.userSchedule()
-      .then(data => {
-        data.data.forEach(scheduledClass => {
-          this.state.events.push(scheduledClass)
-        })
+      .then(res => { 
+        this.setState({ events: res.data })
         console.log(this.state.events)
-      }
-      )
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
