@@ -1,5 +1,5 @@
 import React from "react";
-import { name, image1 } from "../../media";
+import { name, image1 } from "../media";
 
 class About extends React.Component {
   render() {
