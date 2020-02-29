@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row, Container } from "../../components/Grid/index";
 import { name, image1 } from "../../media";
 
 class About extends React.Component {
