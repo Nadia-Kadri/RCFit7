@@ -20,12 +20,15 @@ class UpcomingClasses extends Component {
       .catch(err => console.log(err))
   }
 
-  userSignUp = (userID, classID) => {
-
+  userSignUp = (classId) => {
+    API.userSignUp(classId)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
   }
 
   onClick = (id) => {
-    console.log(id)
+    // console.log(id)
+    this.userSignUp(id)
   }
 
   render() {
