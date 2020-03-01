@@ -8,34 +8,31 @@ const localizer = momentLocalizer(moment)
 
 class ScheduleCalendar extends Component {
   state = {
-    events: [
-      {
-        id: 1,
-        title: 'Some Event',
-        start: new Date("2020-02-29T12:00:00.000Z"),
-        end: new Date("2020-02-29T13:00:00.000Z"),
-      },
-      {
-        id: 1,
-        title: 'Some Other Event',
-        start: new Date("2020-03-03T12:00:00.000Z"),
-        end: new Date("2020-03-03T13:00:00.000Z"),
-      }
-    ]
+    events: []
   };
 
-  // componentDidMount() {
-  //   this.getEvents()
-  // };
+  componentDidMount() {
+    this.getEvents()
+  };
 
-  // getEvents = () => {
-  //   API.userSchedule()
-  //     .then(res => { 
-  //       this.setState({ events: res.data })
-  //       console.log(this.state.events)
-  //     })
-  //     .catch(err => console.log(err))
-  // }
+  getEvents = () => {
+    API.userSchedule()
+      .then(res => {
+        let eventsArr = []
+        for(let i = 0; i < res.data.length; i++) {
+          let end = moment(res.data[i].datetime, "YYYY-MM-DDTHH:mm:ss.SSSZ").add(res.data[i].class.duration, "minutes")
+          eventsArr.push({
+            id: res.data[i]._id,
+            title: res.data[i].class.title,
+            start: new Date(res.data[i].datetime),
+            end: new Date(moment(end).utc().format("YYYY-MM-DDTHH:mm:ss.SSS[Z]"))
+          })
+        }
+        this.setState({ events: eventsArr })
+        // console.log(this.state.events)
+      })
+      .catch(err => console.log(err))
+  }
 
   render() {
     return (

@@ -5,22 +5,22 @@ import ScheduleCalendar from "./ScheduleCalendar";
 import "./index.css";
 
 class Schedule extends Component {
-  state = {
-    events: []
-  };
+  // state = {
+  //   events: []
+  // };
 
-  componentDidMount() {
-    this.getEvents()
-  };
+  // componentDidMount() {
+  //   this.getEvents()
+  // };
 
-  getEvents = () => {
-    API.userSchedule()
-      .then(res => { 
-        this.setState({ events: res.data })
-        console.log(this.state.events)
-      })
-      .catch(err => console.log(err))
-  }
+  // getEvents = () => {
+  //   API.userSchedule()
+  //     .then(res => { 
+  //       this.setState({ events: res.data })
+  //       // console.log(this.state.events)
+  //     })
+  //     .catch(err => console.log(err))
+  // }
 
   render() {
     return (
