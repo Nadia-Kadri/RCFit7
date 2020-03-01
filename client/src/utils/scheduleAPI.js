@@ -6,5 +6,8 @@ export default {
   },
   userSignUp: function (classId) {
     return axios.put("api/schedule/user/signup/" + classId)
+  },
+  userCancel: function (classId) {
+    return axios.put("api/schedule/user/cancel/" + classId)
   }
 };

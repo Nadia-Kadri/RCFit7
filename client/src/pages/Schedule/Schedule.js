@@ -12,7 +12,7 @@ class Schedule extends Component {
         <div className="custContainer">
           <div className="row">
             <div className="col-sm-5">
-              <UpcomingClasses />
+              <UpcomingClasses userId={this.props.userId} />
             </div>
             <div className="col-sm-7">
               <ScheduleCalendar />
