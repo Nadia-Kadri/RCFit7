@@ -11,7 +11,7 @@ class UpcomingClass extends Component {
           <div className="card-body">
             <span className="card-title">{this.props.title} {this.props.duration}</span>
             <span className="time-sign-up">
-              <div className="time">{moment(this.props.time, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("hh:mm A")}</div>
+              <div className="time">{moment(this.props.time, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("dddd h:mmA")}</div>
               <Button 
                 id={this.props.id} 
                 users={this.props.users}
