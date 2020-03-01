@@ -21,14 +21,14 @@ class UpcomingClasses extends Component {
       .catch(err => console.log(err))
   }
 
-  userSignUp = (classId) => {
-    API.userSignUp(classId)
+  userSignUp = (scheduleId) => {
+    API.userSignUp(scheduleId)
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }
 
-  userCancel = (classId) => {
-    API.userCancel(classId)
+  userCancel = (scheduleId) => {
+    API.userCancel(scheduleId)
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }

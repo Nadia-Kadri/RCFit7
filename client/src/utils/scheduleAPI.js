@@ -4,10 +4,10 @@ export default {
   userSchedule: function () {
     return axios.get("/api/schedule/userView");
   },
-  userSignUp: function (classId) {
-    return axios.put("api/schedule/user/signup/" + classId)
+  userSignUp: function (scheduleId) {
+    return axios.put("api/schedule/user/signup/" + scheduleId)
   },
-  userCancel: function (classId) {
-    return axios.put("api/schedule/user/cancel/" + classId)
+  userCancel: function (scheduleId) {
+    return axios.put("api/schedule/user/cancel/" + scheduleId)
   }
 };
