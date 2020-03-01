@@ -48,13 +48,7 @@ class Navbar extends React.Component {
             }
           </div>
         </nav>
-
-
-
-
-
-
-        <nav className="navbar fixed-bottom navbar-light bg-light">
+        {/* <nav className="navbar fixed-bottom navbar-light bg-light">
           <a className="navbar-brand text-center" href="#">
             231B North Village Blvd. <br />
             Celebration, FL 34747
@@ -68,7 +62,7 @@ class Navbar extends React.Component {
             <br />
             Facebook
           </a>
-        </nav>
+        </nav> */}
       </React.Fragment>
     );
   }
