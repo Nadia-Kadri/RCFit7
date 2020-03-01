@@ -5,7 +5,10 @@
   margin-top: 20px;
 }
 
-.sign-up-button {
+.time-sign-up {
   float: right;
+}
+
+.time, .sign-up-button {
   font-size: 13px;
 }
