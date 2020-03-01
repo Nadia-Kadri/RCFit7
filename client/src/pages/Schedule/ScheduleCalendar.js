@@ -42,7 +42,7 @@ class ScheduleCalendar extends Component {
           defaultDate={new Date()}
           defaultView="week"
           events={this.state.events}
-          style={{ height: "100vh" }}
+          style={{ height: "70vh" }}
           startAccessor="start"
           endAccessor="end"
         />
