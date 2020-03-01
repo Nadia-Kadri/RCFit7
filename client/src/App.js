@@ -15,7 +15,8 @@ import API from "./utils/userAPI";
 class App extends Component {
   state = {
     authorized: false,
-    display: false
+    display: false,
+    userId: false
   };
 
   componentDidMount() {
@@ -26,9 +27,16 @@ class App extends Component {
     API.isAuthorized()
       .then(res => {
         console.log(res)
-        this.setState({
-          authorized: res.data.message ? false : true,
-          display: true
+        res.data.message ? 
+          this.setState({
+            authorized: false,
+            display: true,
+            userId: false
+          })
+        : this.setState({
+          authorized: true,
+          display: true,
+          userId: res.data._id
         })
       })
       .catch(err => {
@@ -40,6 +48,7 @@ class App extends Component {
   logout = () => {
     API.logout()
       .then(res => {
+        window.location.reload(false)
         console.log("logged out");
         this.isAuthorized();
       })
@@ -85,7 +94,7 @@ class App extends Component {
               </Route>
 
               <Route exact path="/schedule">
-                <Schedule />
+                <Schedule userId={this.state.userId} />
               </Route>
 
               <Route exact path="/contact">

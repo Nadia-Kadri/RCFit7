@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "./Button";
 import moment from "moment";
 
 class UpcomingClass extends Component {
@@ -11,7 +12,13 @@ class UpcomingClass extends Component {
             <span className="card-title">{this.props.title} {this.props.duration}</span>
             <span className="time-sign-up">
               <div className="time">{moment(this.props.time, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("hh:mm A")}</div>
-              <div className="btn btn-primary sign-up-button" id={this.props.id} onClick={this.props.onClick.bind(this, this.props.id)}>Sign-Up</div>
+              <Button 
+                id={this.props.id} 
+                users={this.props.users}
+                userId={this.props.userId} 
+                onClickSignUp={this.props.onClickSignUp}
+                onClickCancel={this.props.onClickCancel}
+              />
             </span>
             <p className="card-text">{this.props.trainer}</p>
           </div>

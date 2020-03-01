@@ -45,6 +45,16 @@ router.put("/user/signup/:classId", isAuthenticated, function(req, res) {
     .catch(err => console.log(err.message));
 });
 
+// Put route for users to cancel class
+router.put("/user/cancel/:classId", isAuthenticated, function(req, res) {
+  db.Schedule.findOneAndUpdate({ _id: req.params.classId }, { $pull: { users: req.user._id } }, { new: true })
+    .then(result => {
+      console.log(result)
+      res.json(result)
+    })
+    .catch(err => console.log(err.message));
+});
+
 // Get route for Admin to see who is signed up for a specific classes
 router.get("/adminView/:id", function(req, res) {
   db.Schedule.findOne({ _id: req.params.id })

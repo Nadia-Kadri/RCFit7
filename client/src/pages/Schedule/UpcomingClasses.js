@@ -16,6 +16,7 @@ class UpcomingClasses extends Component {
     API.userSchedule()
       .then(res => { 
         this.setState({ events: res.data })
+        // console.log(this.state.events)
       })
       .catch(err => console.log(err))
   }
@@ -26,15 +27,38 @@ class UpcomingClasses extends Component {
       .catch(err => console.log(err))
   }
 
-  onClick = (id) => {
+  userCancel = (classId) => {
+    API.userCancel(classId)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+
+  onClickSignUp = (id) => {
     // console.log(id)
     this.userSignUp(id)
+    window.location.reload(false)
+  }
+
+  onClickCancel = (id) => {
+    this.userCancel(id)
+    window.location.reload(false)
   }
 
   render() {
     return (
       this.state.events.map(event => (
-        <UpcomingClass key={event._id} id={event._id} title={event.class.title} duration={event.class.duration} trainer={event.trainer.firstName} time={event.datetime} onClick={this.onClick}/>
+        <UpcomingClass 
+          key={event._id} 
+          id={event._id} 
+          title={event.class.title} 
+          duration={event.class.duration} 
+          trainer={event.trainer.firstName} 
+          time={event.datetime} 
+          users={event.users} 
+          userId={this.props.userId} 
+          onClickSignUp={this.onClickSignUp}
+          onClickCancel={this.onClickCancel}
+        />
       ))
     );
   }
