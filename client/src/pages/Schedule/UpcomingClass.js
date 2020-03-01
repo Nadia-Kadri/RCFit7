@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
 
-// moment(res.data[i].datetime, "YYYY-MM-DDTHH:mm:ss.SSSZ").add(res.data[i].class.duration, "minutes")
-
 class UpcomingClass extends Component {
 
   render() {

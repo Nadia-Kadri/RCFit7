@@ -36,8 +36,8 @@ router.get("/userView", function(req, res) {
 })
 
 // Put route for users to sign up for classes
-router.put("/user/signup/:classId/:userId", function(req, res) {
-  db.Schedule.findOneAndUpdate({ _id: req.params.classId }, { $push: { users: req.params.userId } }, { new: true })
+router.put("/user/signup/:classId", isAuthenticated, function(req, res) {
+  db.Schedule.findOneAndUpdate({ _id: req.params.classId }, { $push: { users: req.user._id } }, { new: true })
     .then(result => {
       console.log(result)
       res.json(result)
