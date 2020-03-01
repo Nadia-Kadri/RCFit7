@@ -31,7 +31,7 @@ class UpcomingClasses extends Component {
   render() {
     return (
       this.state.events.map(event => (
-        <UpcomingClass key={event._id} id={event._id} title={event.class.title} duration={event.class.duration} trainer={event.trainer.firstName} onClick={this.onClick}/>
+        <UpcomingClass key={event._id} id={event._id} title={event.class.title} duration={event.class.duration} trainer={event.trainer.firstName} time={event.datetime} onClick={this.onClick}/>
       ))
     );
   }
