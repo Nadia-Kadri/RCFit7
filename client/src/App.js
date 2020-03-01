@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer/Footer";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
@@ -104,6 +105,7 @@ class App extends Component {
               </Route>
 
             </Switch>
+            <Footer />
           </div>
         ) : ""}
       </Router>
