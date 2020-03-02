@@ -19,7 +19,8 @@ class App extends Component {
     authorized: false,
     display: false,
     userId: false,
-    isAdmin: false
+    isAdmin: false,
+    user: {}
   };
 
   componentDidMount() {
@@ -41,8 +42,10 @@ class App extends Component {
           authorized: true,
           display: true,
           userId: res.data._id,
-          isAdmin: res.data.isAdmin
+          isAdmin: res.data.isAdmin,
+          user: res.data
         })
+        // console.log(this.state.user)
       })
       .catch(err => {
         console.log(err);
@@ -108,7 +111,7 @@ class App extends Component {
 
               <Route exact path="/user/profile">
                 {this.state.authorized && !this.state.isAdmin ? (
-                  <UserProfile />
+                  <UserProfile user={this.state.user} />
                 ) : (
                   <Redirect to="/login" />
                 )}
@@ -117,7 +120,7 @@ class App extends Component {
 
               <Route exact path="/admin">
                 {this.state.authorized && this.state.isAdmin ? (
-                  <Admin />
+                  <Admin user={this.state.user} />
                 ) : (
                   <Redirect to="/login" />
                 )}
