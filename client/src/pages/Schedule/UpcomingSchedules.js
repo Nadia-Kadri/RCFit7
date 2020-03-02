@@ -36,12 +36,12 @@ class UpcomingSchedules extends Component {
   onClickSignUp = (id) => {
     // console.log(id)
     this.userSignUp(id)
-    window.location.reload(false)
+    this.props.userId ? window.location.reload(false) : alert("Please log in")
   }
 
   onClickCancel = (id) => {
     this.userCancel(id)
-    window.location.reload(false)
+    this.props.userId ? window.location.reload(false) : alert("Please log in")
   }
 
   render() {
