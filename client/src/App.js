@@ -94,7 +94,7 @@ class App extends Component {
                 <About />
               </Route>
 
-              <Route exact path="/membershipOptions">
+              <Route exact path="/membership/options">
                 <MembershipOptions />
               </Route>
 
@@ -106,21 +106,30 @@ class App extends Component {
                 <Contact />
               </Route>
 
-              <Route exact path="/userProfile">
-                <UserProfile />
+              <Route exact path="/user/profile">
+                {this.state.authorized && !this.state.isAdmin ? (
+                  <UserProfile />
+                ) : (
+                  <Redirect to="/login" />
+                )}
+                
               </Route>
 
               <Route exact path="/admin">
-                <Admin />
+                {this.state.authorized && this.state.isAdmin ? (
+                  <Admin />
+                ) : (
+                  <Redirect to="/login" />
+                )}
               </Route>
 
-              {/* <Route exact path="/protected">
+             {/* <Route exact path="/protected">
                 {this.state.authorized ? (
                   <Protected logout={this.logout} />
                 ) : (
                     <Redirect to="/login" />
                   )}
-              </Route> */}
+              </Route>  */}
 
               <Route>
                 <Redirect to="/" />
