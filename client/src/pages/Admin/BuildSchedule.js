@@ -19,7 +19,7 @@ class BuildSchedule extends Component {
                   <h6>Date and Time</h6>
                 </div>
                 <div className="col-sm-4">
-                  <h6>Recurring Class</h6>
+                  <h6>Class</h6>
                 </div>
                 <div className="col-sm-4">
                   <h6>Trainer</h6>

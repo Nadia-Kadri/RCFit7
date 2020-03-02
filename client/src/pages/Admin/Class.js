@@ -4,10 +4,11 @@ import "./index.css";
 class Class extends Component {
   render() {
     return (
-      <div>
-        <span>{this.props.title} {this.props.duration}</span>
-        <span className="btn btn-outline-danger delete-class-button text-center">X</span>
-      </div>
+      <tr>
+        <td scope="row">{this.props.title}</td>
+        <td>{this.props.duration}</td>
+        <td><span className="btn btn-outline-danger delete-class-button text-center">X</span></td>
+      </tr>
     );
   }
 }

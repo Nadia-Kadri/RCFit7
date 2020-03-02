@@ -20,7 +20,18 @@ class Classes extends Component {
               <div className="row">
                 <div className="col-sm-6">
                   <h6>Current Classes</h6>
-                  {this.props.classes.map(e => <Class key={e._id} title={e.title} duration={e.duration} />)}
+                  <table className="table table-hover table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.props.classes.map(e => <Class key={e._id} title={e.title} duration={e.duration} />)}
+                    </tbody>
+                  </table>
                 </div>
                 <div className="col-sm-6">
                   <h6>Add a Class</h6>

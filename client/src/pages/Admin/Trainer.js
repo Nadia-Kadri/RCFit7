@@ -4,10 +4,10 @@ import "./index.css";
 class Trainer extends Component {
   render() {
     return (
-      <div>
-        <span>{this.props.firstName} {this.props.lastName}</span>
-        <span className="btn btn-outline-danger delete-trainer-button text-center">X</span>
-      </div>
+      <tr>
+        <td scope="row">{this.props.firstName} {this.props.lastName}</td>
+        <td><span className="btn btn-outline-danger delete-trainer-button text-center">X</span></td>
+      </tr>
     );
   }
 }
