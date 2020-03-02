@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/scheduleAPI";
-import UpcomingClass from "./UpcomingClass";
+import UpcomingSchedule from "./UpcomingSchedule";
 
-class UpcomingClasses extends Component {
+class UpcomingSchedules extends Component {
 
   state = {
     events: []
@@ -47,7 +47,7 @@ class UpcomingClasses extends Component {
   render() {
     return (
       this.state.events.map(event => (
-        <UpcomingClass 
+        <UpcomingSchedule 
           key={event._id} 
           id={event._id} 
           title={event.class.title} 
@@ -64,4 +64,4 @@ class UpcomingClasses extends Component {
   }
 }
 
-export default UpcomingClasses;
+export default UpcomingSchedules;

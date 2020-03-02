@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from "./Button";
 import moment from "moment";
 
-class UpcomingClass extends Component {
+class UpcomingSchedule extends Component {
 
   render() {
     return (
@@ -28,4 +28,4 @@ class UpcomingClass extends Component {
   }
 }
 
-export default UpcomingClass;
+export default UpcomingSchedule;

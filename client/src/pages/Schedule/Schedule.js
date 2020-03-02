@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UpcomingClasses from "./UpcomingClasses";
+import UpcomingSchedules from "./UpcomingSchedules";
 import ScheduleCalendar from "./ScheduleCalendar";
 import "./index.css";
 
@@ -12,7 +12,7 @@ class Schedule extends Component {
         <div className="custContainer">
           <div className="row">
             <div className="col-sm-5">
-              <UpcomingClasses userId={this.props.userId} />
+              <UpcomingSchedules userId={this.props.userId} />
             </div>
             <div className="col-sm-7">
               <ScheduleCalendar />
