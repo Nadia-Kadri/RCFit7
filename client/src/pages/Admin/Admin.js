@@ -1,52 +1,61 @@
 import React, { Component } from "react";
+import Classes from "./Classes";
+import Trainers from "./Trainers";
+import BuildSchedule from "./BuildSchedule";
+import CurrentSchedules from "./CurrentSchedules"
 // import "./index.css";
 
 class Admin extends Component {
+
+  componentDidMount() {
+    
+  }
+
+
   
   render() {
     return (
       <React.Fragment>
         <div className="custContainer">
-          <div className="row">
+
+          <div className="row m-1">
             <div className="col-sm-12">
               <h1>Dashboard</h1>
             </div>
           </div>
+
           <div className="row">
             <div className="col-sm-12">
-              <h2>Welcome Nadia(make dynamic)!</h2>
-              <p>This is your protected Admin Page that only you have access to. On this page you can add recurring classes, update trainers, build your schedule and much more. Scroll down to get started!</p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-6">
-              <h4>Add a recurring class</h4>
-            </div>
-            <div className="col-sm-6">
-              <h4>Add or remove a trainer</h4>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-12">
-              <h4>Build your schedule</h4>
-              <div className="row">
-                <div className="col-sm-4">
-                  <h6>Date and Time</h6>
-                </div>
-                <div className="col-sm-4">
-                  <h6>Recurring Class</h6>
-                </div>
-                <div className="col-sm-4">
-                  <h6>Trainer</h6>
+              <div className="card bg-light mb-3">
+                <div className="card-body">
+                  <h2 className="card-title">Welcome {this.props.user.firstName}!</h2>
+                  <p className="card-text">This is your protected Admin Page that only you have access to. On this page you can add recurring classes, update trainers, build your schedule and much more. Scroll down to get started!</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div className="row">
-            <div className="col-sm-12">
-              <h4>Your current schedule</h4>
+            <div className="col-sm-6">
+              <Classes />
+            </div>
+            <div className="col-sm-6">
+              <Trainers />
             </div>
           </div>
+
+          <div className="row">
+            <div className="col-sm-12">
+              <BuildSchedule />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-12">
+              <CurrentSchedules />
+            </div>
+          </div>
+
         </div>
       </React.Fragment>
     );
