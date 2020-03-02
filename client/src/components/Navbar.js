@@ -20,7 +20,7 @@ class Navbar extends React.Component {
                 </span>
               </Link>
 
-              <Link to="/membershipOptions" className={window.location.pathname === "/membershipOptions" ? "nav-link active" : "nav-link"}>
+              <Link to="/membership/options" className={window.location.pathname === "/membershipOptions" ? "nav-link active" : "nav-link"}>
                 <span className="float-right">
                   Membership Options <span className="sr-only">(current)</span>
                 </span>
@@ -39,7 +39,7 @@ class Navbar extends React.Component {
               </Link>
             </div>
             {this.props.authorized && !this.props.isAdmin
-              ? (<Link to="/userProfile">
+              ? (<Link to="/user/profile">
                     <span className="float-right">
                       User Profile <span className="sr-only">(current)</span>
                     </span>
