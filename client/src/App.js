@@ -9,6 +9,8 @@ import About from "./pages/About";
 import MembershipOptions from "./pages/MembershipOptions";
 import Schedule from "./pages/Schedule/Schedule";
 import Contact from "./pages/Contact";
+import UserProfile from "./pages/UserProfile/UserProfile";
+import Admin from "./pages/Admin/Admin";
 // import Protected from "./pages/Protected";
 import API from "./utils/userAPI";
 
@@ -16,7 +18,8 @@ class App extends Component {
   state = {
     authorized: false,
     display: false,
-    userId: false
+    userId: false,
+    isAdmin: false
   };
 
   componentDidMount() {
@@ -31,12 +34,14 @@ class App extends Component {
           this.setState({
             authorized: false,
             display: true,
-            userId: false
+            userId: false,
+            isAdmin: false
           })
         : this.setState({
           authorized: true,
           display: true,
-          userId: res.data._id
+          userId: res.data._id,
+          isAdmin: res.data.isAdmin
         })
       })
       .catch(err => {
@@ -66,7 +71,7 @@ class App extends Component {
       <Router>
         {this.state.display ? (
           <div>
-            <Navbar logout={this.logout} authorized={this.state.authorized}/>
+            <Navbar logout={this.logout} authorized={this.state.authorized} isAdmin={this.state.isAdmin} />
             <Switch>
 
               <Route exact path="/">
@@ -99,6 +104,14 @@ class App extends Component {
 
               <Route exact path="/contact">
                 <Contact />
+              </Route>
+
+              <Route exact path="/userProfile">
+                <UserProfile />
+              </Route>
+
+              <Route exact path="/admin">
+                <Admin />
               </Route>
 
               {/* <Route exact path="/protected">

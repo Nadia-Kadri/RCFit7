@@ -38,6 +38,22 @@ class Navbar extends React.Component {
                 </span>
               </Link>
             </div>
+            {this.props.authorized && !this.props.isAdmin
+              ? (<Link to="/userProfile">
+                    <span className="float-right">
+                      User Profile <span className="sr-only">(current)</span>
+                    </span>
+                  </Link>)
+              : ""
+            }
+            {this.props.authorized && this.props.isAdmin
+              ? (<Link to="/admin">
+                  <span className="float-right">
+                    Admin Page <span className="sr-only">(current)</span>
+                  </span>
+                </Link>)
+              : ""
+            }
             {this.props.authorized 
               ? (<button className="btn-primary" onClick={this.props.logout}>Logout</button>) 
               : (<Link to="/login">
