@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import Classes from "./Classes";
 import Trainers from "./Trainers";
 import BuildSchedule from "./BuildSchedule";
-import CurrentSchedules from "./CurrentSchedules"
+import CurrentSchedules from "./CurrentSchedules";
+import classAPI from "../../utils/classAPI"
+// import trainerAPI from "../../utils/trainerAPI"
 // import "./index.css";
 
 class Admin extends Component {
 
   componentDidMount() {
+    
+  }
+
+  getClasses = () => {
     
   }
 
