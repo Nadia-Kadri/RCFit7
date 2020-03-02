@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Trainer from "./Trainer";
 // import "./index.css";
 
 class Trainers extends Component {
@@ -17,6 +18,7 @@ class Trainers extends Component {
               <div className="row">
                 <div className="col-sm-6">
                   <h6>Current Trainers</h6>
+                  {this.props.trainers.map(trainer => <Trainer key={trainer._id} userId={trainer._id} firstName={trainer.firstName} lastName={trainer.lastName} />)}
                 </div>
                 <div className="col-sm-6">
                   <h6>Add a Trainer</h6>

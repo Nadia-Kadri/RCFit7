@@ -76,7 +76,7 @@ class Admin extends Component {
               <Classes classes={this.state.classes} />
             </div>
             <div className="col-sm-6">
-              <Trainers />
+              <Trainers trainers={this.state.trainers} />
             </div>
           </div>
 
