@@ -3,18 +3,50 @@ import Classes from "./Classes";
 import Trainers from "./Trainers";
 import BuildSchedule from "./BuildSchedule";
 import CurrentSchedules from "./CurrentSchedules";
-import classAPI from "../../utils/classAPI"
-// import trainerAPI from "../../utils/trainerAPI"
+import classAPI from "../../utils/classAPI";
+import userAPI from "../../utils/userAPI";
+import scheduleAPI from "../../utils/scheduleAPI";
 // import "./index.css";
 
 class Admin extends Component {
 
+  state = {
+    classes: [],
+    trainers: [],
+    schedules: []
+  };
+
   componentDidMount() {
-    
+    this.getClasses()
+    this.getTrainers()
+    this.getSchedules()
   }
 
   getClasses = () => {
-    
+    classAPI.viewClasses()
+      .then(res => { 
+        this.setState({ classes: res.data })
+        console.log(this.state.classes)
+      })
+      .catch(err => console.log(err))
+  }
+
+  getTrainers = () => {
+    userAPI.viewTrainers()
+      .then(res => { 
+        this.setState({ trainers: res.data })
+        console.log(this.state.trainers)
+      })
+      .catch(err => console.log(err))
+  }
+
+  getSchedules = () => {
+    scheduleAPI.userSchedule()
+      .then(res => { 
+        this.setState({ schedules: res.data })
+        console.log(this.state.schedules)
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
@@ -41,7 +73,7 @@ class Admin extends Component {
 
           <div className="row">
             <div className="col-sm-6">
-              <Classes />
+              <Classes classes={this.state.classes} />
             </div>
             <div className="col-sm-6">
               <Trainers />

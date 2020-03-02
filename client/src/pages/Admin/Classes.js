@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Class from "./Class";
 // import "./index.css";
 
 class Classes extends Component {
@@ -19,6 +20,7 @@ class Classes extends Component {
               <div className="row">
                 <div className="col-sm-6">
                   <h6>Current Classes</h6>
+                  {this.props.classes.map(e => <Class key={e._id} title={e.title} duration={e.duration} />)}
                 </div>
                 <div className="col-sm-6">
                   <h6>Add a Class</h6>
