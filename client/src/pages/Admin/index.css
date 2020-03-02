@@ -4,3 +4,9 @@
   font-size: 10px;
   float: right;
 }
+
+.delete-schedule-button {
+  width: 10px;
+  height: 20px;
+  font-size: 10px;
+}

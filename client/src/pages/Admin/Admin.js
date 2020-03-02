@@ -88,7 +88,7 @@ class Admin extends Component {
 
           <div className="row">
             <div className="col-sm-12">
-              <CurrentSchedules />
+              <CurrentSchedules schedules={this.state.schedules} />
             </div>
           </div>
 
