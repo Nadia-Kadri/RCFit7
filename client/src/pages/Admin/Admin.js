@@ -26,7 +26,7 @@ class Admin extends Component {
     classAPI.viewClasses()
       .then(res => { 
         this.setState({ classes: res.data })
-        console.log(this.state.classes)
+        // console.log(this.state.classes)
       })
       .catch(err => console.log(err))
   }
@@ -35,7 +35,7 @@ class Admin extends Component {
     userAPI.viewTrainers()
       .then(res => { 
         this.setState({ trainers: res.data })
-        console.log(this.state.trainers)
+        // console.log(this.state.trainers)
       })
       .catch(err => console.log(err))
   }
@@ -44,7 +44,23 @@ class Admin extends Component {
     scheduleAPI.userSchedule()
       .then(res => { 
         this.setState({ schedules: res.data })
-        console.log(this.state.schedules)
+        // console.log(this.state.schedules)
+      })
+      .catch(err => console.log(err))
+  }
+
+  addClass = (title, duration) => {
+    // event.preventDefault();
+    // console.log(title)
+    // console.log(duration)
+    classAPI.addClass({
+      title: title,
+      duration: duration
+    })
+      .then(res => { 
+        // this.setState({ schedules: res.data })
+        console.log(res);
+        this.getClasses();
       })
       .catch(err => console.log(err))
   }
@@ -73,7 +89,7 @@ class Admin extends Component {
 
           <div className="row">
             <div className="col-sm-6">
-              <Classes classes={this.state.classes} />
+              <Classes classes={this.state.classes} onClick={this.addClass} />
             </div>
             <div className="col-sm-6">
               <Trainers trainers={this.state.trainers} />
@@ -82,7 +98,7 @@ class Admin extends Component {
 
           <div className="row">
             <div className="col-sm-12">
-              <BuildSchedule />
+              <BuildSchedule classes={this.state.classes} trainers={this.state.trainers} />
             </div>
           </div>
 
