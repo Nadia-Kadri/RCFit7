@@ -87,7 +87,7 @@ class BuildSchedule extends Component {
                   <button
                     className="btn btn-primary btn-sm"
                     disabled={
-                      this.state.datetime && this.state.class && this.state.trainer ? "" : "disabled"
+                      this.state.date && this.state.time && this.state.class && this.state.trainer ? "" : "disabled"
                     }
                     onClick={this.props.onClick.bind(this, this.state.datetime, this.state.class, this.state.trainer)}
                   >Submit</button>

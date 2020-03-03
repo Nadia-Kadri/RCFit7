@@ -49,7 +49,8 @@ class Admin extends Component {
       .catch(err => console.log(err))
   };
 
-  addClass = (title, duration) => {
+  addClass = (title, duration, event) => {
+    event.preventDefault();
     classAPI.addClass({
       title: title,
       duration: duration
@@ -73,7 +74,8 @@ class Admin extends Component {
     // .catch(err => console.log(err))
   }
 
-  addTrainer = (email) => {
+  addTrainer = (email, event) => {
+    event.preventDefault();
     userAPI.addTrainer(email)
       .then(res => { 
         console.log(res);
@@ -82,20 +84,21 @@ class Admin extends Component {
       .catch(err => console.log(err))
   }
 
-  addSchedule = (datetime, e, trainer) => {
-    console.log(datetime)
-    console.log(e)
-    console.log(trainer)
-    // scheduleAPI.createSchedule({
-    //   datetime: datetime,
-    //   class: e,
-    //   trainer: trainer
-    // })
-    //   .then(res => { 
-    //     console.log(res);
-    //     this.getSchedules();
-    //   })
-    //   .catch(err => console.log(err))
+  addSchedule = (datetime, e, trainer, event) => {
+    event.preventDefault();
+    // console.log(datetime)
+    // console.log(e)
+    // console.log(trainer)
+    scheduleAPI.createSchedule({
+      datetime: datetime,
+      class: e,
+      trainer: trainer
+    })
+      .then(res => { 
+        console.log(res);
+        this.getSchedules();
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
