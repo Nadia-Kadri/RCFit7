@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from "moment";
 // import "./index.css";
 
 class BuildSchedule extends Component {
@@ -6,6 +7,7 @@ class BuildSchedule extends Component {
   state = {
     date: "",
     time: "",
+    datetime: "",
     class: "",
     trainer: ""
   };
@@ -13,23 +15,19 @@ class BuildSchedule extends Component {
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
-      [name]: value.trim()
+      [name]: value
     });
     console.log(this.state)
+    this.convertDate()
   };
 
-  handleSelectChange = event => {
-    // console.log(event.target.value)
-    const { name, id } = event.target;
+  convertDate = () => {
+    let datetime = this.state.date+this.state.time;
+    let convertedDate = moment(datetime, "YYYY-MM-DDHH:mm").utc().format("YYYY-MM-DDTHH:mm:ss.SSS[Z]");
     this.setState({
-      [name]: id
+      datetime: convertedDate
     });
-    console.log(this.state)
   };
-
-  componentDidMount() {
-    
-  }
   
   render() {
     return (
@@ -67,8 +65,8 @@ class BuildSchedule extends Component {
                   <div className="col-sm-4">
                     <div className="form-group">
                       <label>Class</label>
-                      <select className="form-control" name="class" value={this.state.class} onChange={this.handleSelectChange}>
-                        {this.props.classes.map(e => <option key={e._id} id={e._id}>{e.title}</option>)}
+                      <select className="form-control" name="class" onChange={this.handleInputChange}>
+                        {this.props.classes.map(e => <option key={e._id} value={e._id} >{e.title}</option>)}
                       </select>
                     </div>
                   </div>
@@ -76,20 +74,27 @@ class BuildSchedule extends Component {
                   <div className="col-sm-4">
                     <div className="form-group">
                       <label>Trainer</label>
-                      <select className="form-control" name="trainer" value={this.state.trainer} onChange={this.handleSelectChange}>
-                        {this.props.trainers.map(trainer => <option key={trainer._id} id={trainer._id}>{trainer.firstName} {trainer.lastName}</option>)}
+                      <select className="form-control" name="trainer" onChange={this.handleInputChange}>
+                        {this.props.trainers.map(trainer => <option key={trainer._id} value={trainer._id}>{trainer.firstName} {trainer.lastName}</option>)}
                       </select>
                     </div>
                   </div>
+                  
+                </div>
 
-                  {/* <button
+                <div className="row">
+                  <div className="col-sm-4">
+                  <button
                     className="btn btn-primary btn-sm"
                     disabled={
-                      this.state.title && this.state.duration ? "" : "disabled"
+                      this.state.date && this.state.time && this.state.class && this.state.trainer ? "" : "disabled"
                     }
-                    onClick={this.props.onClick.bind(this, this.state.date, this.state.time, this.state.class, this.state.trainer)}
-                  >Submit</button> */}
+                    onClick={this.props.onClick.bind(this, this.state.datetime, this.state.class, this.state.trainer)}
+                  >Submit</button>
                   </div>
+                </div>
+
+                  
                 </form>
               
             </div>
