@@ -15,5 +15,11 @@ export default {
   },
   availableUN: function (username) {
     return axios.get("/api/user/?username=" + username);
+  },
+  viewTrainers: function () {
+    return axios.get("/api/trainers")
+  },
+  addTrainer: function (email) {
+    return axios.put("/api/create/trainer/" + email)
   }
 };

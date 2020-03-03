@@ -81,10 +81,10 @@ router.get("/trainers", function(req, res) {
 });
 
 // Put route for Admin to update a user and make them a trainer
-router.put("/create/trainer/:id", function(req, res) {
+router.put("/create/trainer/:email", function(req, res) {
   console.log("updating user to isTrainer: true")
 
-  db.User.findOneAndUpdate({ _id: req.params.id }, {$set: {isTrainer: true}})
+  db.User.findOneAndUpdate({ email: req.params.email }, {$set: {isTrainer: true}})
     .then(() => res.json("Trainer Added"))
     .catch(err => console.log(err.message));
 });
