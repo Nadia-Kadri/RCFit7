@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UpcomingSchedules from "./UpcomingSchedules";
 import ScheduleCalendar from "./ScheduleCalendar";
+import SignUpModal from "./Modals/SignUpModal";
 import "./index.css";
 
 class Schedule extends Component {
@@ -19,6 +20,7 @@ class Schedule extends Component {
             </div>
           </div>
         </div>
+        <SignUpModal />
       </React.Fragment>
     );
   }

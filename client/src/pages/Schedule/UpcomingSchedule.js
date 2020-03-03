@@ -11,11 +11,12 @@ class UpcomingSchedule extends Component {
           <div className="card-body">
             <span className="card-title">{this.props.title} {this.props.duration}</span>
             <span className="time-sign-up">
-              <div className="time">{moment(this.props.time, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("dddd h:mmA")}</div>
+              <div className="time">{moment(this.props.datetime, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("dddd h:mmA")}</div>
               <Button 
                 id={this.props.id} 
                 users={this.props.users}
-                userId={this.props.userId} 
+                userId={this.props.userId}
+                isSignedUp={this.props.isSignedUp}
                 onClickSignUp={this.props.onClickSignUp}
                 onClickCancel={this.props.onClickCancel}
               />

@@ -5,18 +5,34 @@ import UpcomingSchedule from "./UpcomingSchedule";
 class UpcomingSchedules extends Component {
 
   state = {
-    events: []
+    schedules: []
   };
 
   componentDidMount() {
-    this.getEvents()
+    this.getSchedules()
   };
 
-  getEvents = () => {
+  getSchedules = () => {
     API.userSchedule()
       .then(res => { 
-        this.setState({ events: res.data })
-        // console.log(this.state.events)
+        let schedulesArr = []
+        for(let i = 0; i < res.data.length; i++) {
+          let isSignedUp
+          let found = res.data[i].users.some(user => user === this.props.userId)
+          found ? isSignedUp = true : isSignedUp = false
+
+          schedulesArr.push({
+            id: res.data[i]._id,
+            title: res.data[i].class.title,
+            duration: res.data[i].class.duration,
+            trainer: res.data[i].trainer.firstName,
+            datetime: new Date(res.data[i].datetime),
+            users: res.data[i].users, 
+            isSignedUp: isSignedUp
+          })
+        }
+        this.setState({ schedules: schedulesArr })
+        console.log(this.state.schedules)
       })
       .catch(err => console.log(err))
   }
@@ -36,25 +52,28 @@ class UpcomingSchedules extends Component {
   onClickSignUp = (id) => {
     // console.log(id)
     this.userSignUp(id)
-    this.props.userId ? window.location.reload(false) : alert("Please log in")
+    this.getSchedules()
+    // this.props.userId ? window.location.reload(false) : alert("Please log in")
   }
 
   onClickCancel = (id) => {
     this.userCancel(id)
-    this.props.userId ? window.location.reload(false) : alert("Please log in")
+    this.getSchedules()
+    // this.props.userId ? window.location.reload(false) : alert("Please log in")
   }
 
   render() {
     return (
-      this.state.events.map(event => (
+      this.state.schedules.map(schedule => (
         <UpcomingSchedule 
-          key={event._id} 
-          id={event._id} 
-          title={event.class.title} 
-          duration={event.class.duration} 
-          trainer={event.trainer.firstName} 
-          time={event.datetime} 
-          users={event.users} 
+          key={schedule.id} 
+          id={schedule.id} 
+          title={schedule.title} 
+          duration={schedule.duration} 
+          trainer={schedule.trainer} 
+          datetime={schedule.datetime} 
+          users={schedule.users}
+          isSignedUp={schedule.isSignedUp}
           userId={this.props.userId} 
           onClickSignUp={this.onClickSignUp}
           onClickCancel={this.onClickCancel}
