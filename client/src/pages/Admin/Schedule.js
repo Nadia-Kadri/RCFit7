@@ -6,7 +6,7 @@ class Schedule extends Component {
   render() {
     return (
       <tr>
-        <td scope="row">{moment(this.props.datetime, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("ddd MM/DD/YY")}</td>
+        <td>{moment(this.props.datetime, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("ddd MM/DD/YY")}</td>
         <td>{moment(this.props.datetime, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("h:mmA")}</td>
         <td>{this.props.duration}</td>
         <td>{this.props.title}</td>

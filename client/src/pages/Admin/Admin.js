@@ -20,7 +20,7 @@ class Admin extends Component {
     this.getClasses()
     this.getTrainers()
     this.getSchedules()
-  }
+  };
 
   getClasses = () => {
     classAPI.viewClasses()
@@ -29,7 +29,7 @@ class Admin extends Component {
         // console.log(this.state.classes)
       })
       .catch(err => console.log(err))
-  }
+  };
 
   getTrainers = () => {
     userAPI.viewTrainers()
@@ -38,7 +38,7 @@ class Admin extends Component {
         // console.log(this.state.trainers)
       })
       .catch(err => console.log(err))
-  }
+  };
 
   getSchedules = () => {
     scheduleAPI.userSchedule()
@@ -47,7 +47,7 @@ class Admin extends Component {
         // console.log(this.state.schedules)
       })
       .catch(err => console.log(err))
-  }
+  };
 
   addClass = (title, duration) => {
     classAPI.addClass({
@@ -60,7 +60,7 @@ class Admin extends Component {
         this.getClasses();
       })
       .catch(err => console.log(err))
-  }
+  };
 
   deleteClass = (id) => {
     console.log(id)
@@ -80,6 +80,22 @@ class Admin extends Component {
         this.getTrainers();
       })
       .catch(err => console.log(err))
+  }
+
+  addSchedule = (datetime, e, trainer) => {
+    console.log(datetime)
+    console.log(e)
+    console.log(trainer)
+    // scheduleAPI.createSchedule({
+    //   datetime: datetime,
+    //   class: e,
+    //   trainer: trainer
+    // })
+    //   .then(res => { 
+    //     console.log(res);
+    //     this.getSchedules();
+    //   })
+    //   .catch(err => console.log(err))
   }
 
   render() {
@@ -115,7 +131,7 @@ class Admin extends Component {
 
           <div className="row">
             <div className="col-sm-12">
-              <BuildSchedule classes={this.state.classes} trainers={this.state.trainers} />
+              <BuildSchedule classes={this.state.classes} trainers={this.state.trainers} onClick={this.addSchedule} />
             </div>
           </div>
 

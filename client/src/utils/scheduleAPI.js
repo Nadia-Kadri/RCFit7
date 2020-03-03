@@ -9,5 +9,8 @@ export default {
   },
   userCancel: function (scheduleId) {
     return axios.put("api/schedule/user/cancel/" + scheduleId)
+  },
+  createSchedule: function (schedule) {
+    return axios.post("api/schedule/create", schedule)
   }
 };
