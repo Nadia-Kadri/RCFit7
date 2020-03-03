@@ -5,12 +5,6 @@ class SignUpModal extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* Button trigger modal  */}
-        {/* <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#signupmodal">
-          Launch demo modal
-        </button> */}
-
-        {/* Modal  */}
         <div className="modal fade" id="signupmodal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">

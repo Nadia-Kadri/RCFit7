@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/scheduleAPI";
 import UpcomingSchedule from "./UpcomingSchedule";
+import LoginModal from "./Modals/LoginModal";
+import SignUpModal from "./Modals/SignUpModal";
+import CancelModal from "./Modals/CancelModal";
 
 class UpcomingSchedules extends Component {
 
@@ -32,7 +35,6 @@ class UpcomingSchedules extends Component {
           })
         }
         this.setState({ schedules: schedulesArr })
-        console.log(this.state.schedules)
       })
       .catch(err => console.log(err))
   }
@@ -50,35 +52,37 @@ class UpcomingSchedules extends Component {
   }
 
   onClickSignUp = (id) => {
-    // console.log(id)
     this.userSignUp(id)
     this.getSchedules()
-    // this.props.userId ? window.location.reload(false) : alert("Please log in")
   }
 
   onClickCancel = (id) => {
     this.userCancel(id)
     this.getSchedules()
-    // this.props.userId ? window.location.reload(false) : alert("Please log in")
   }
 
   render() {
     return (
-      this.state.schedules.map(schedule => (
-        <UpcomingSchedule 
-          key={schedule.id} 
-          id={schedule.id} 
-          title={schedule.title} 
-          duration={schedule.duration} 
-          trainer={schedule.trainer} 
-          datetime={schedule.datetime} 
-          users={schedule.users}
-          isSignedUp={schedule.isSignedUp}
-          userId={this.props.userId} 
-          onClickSignUp={this.onClickSignUp}
-          onClickCancel={this.onClickCancel}
-        />
-      ))
+      <React.Fragment>
+        {this.state.schedules.map(schedule => (
+          <UpcomingSchedule 
+            key={schedule.id} 
+            id={schedule.id} 
+            title={schedule.title} 
+            duration={schedule.duration} 
+            trainer={schedule.trainer} 
+            datetime={schedule.datetime} 
+            users={schedule.users}
+            isSignedUp={schedule.isSignedUp}
+            userId={this.props.userId} 
+            onClickSignUp={this.onClickSignUp}
+            onClickCancel={this.onClickCancel}
+          />
+        ))}
+        <LoginModal />
+        <SignUpModal />
+        <CancelModal />
+      </React.Fragment>
     );
   }
 }
