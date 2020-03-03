@@ -18,5 +18,8 @@ export default {
   },
   viewTrainers: function () {
     return axios.get("/api/trainers")
+  },
+  addTrainer: function (email) {
+    return axios.put("/api/create/trainer/" + email)
   }
 };

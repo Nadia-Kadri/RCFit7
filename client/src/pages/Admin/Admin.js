@@ -50,9 +50,6 @@ class Admin extends Component {
   }
 
   addClass = (title, duration) => {
-    // event.preventDefault();
-    // console.log(title)
-    // console.log(duration)
     classAPI.addClass({
       title: title,
       duration: duration
@@ -61,6 +58,26 @@ class Admin extends Component {
         // this.setState({ schedules: res.data })
         console.log(res);
         this.getClasses();
+      })
+      .catch(err => console.log(err))
+  }
+
+  deleteClass = (id) => {
+    console.log(id)
+    // classAPI.deleteClass(id)
+    // .then(res => { 
+    //   // this.setState({ schedules: res.data })
+    //   console.log(res);
+    //   this.getClasses();
+    // })
+    // .catch(err => console.log(err))
+  }
+
+  addTrainer = (email) => {
+    userAPI.addTrainer(email)
+      .then(res => { 
+        console.log(res);
+        this.getTrainers();
       })
       .catch(err => console.log(err))
   }
@@ -89,10 +106,10 @@ class Admin extends Component {
 
           <div className="row">
             <div className="col-sm-6">
-              <Classes classes={this.state.classes} onClick={this.addClass} />
+              <Classes classes={this.state.classes} onClickAdd={this.addClass} onClickDelete={this.deleteClass} />
             </div>
             <div className="col-sm-6">
-              <Trainers trainers={this.state.trainers} />
+              <Trainers trainers={this.state.trainers} onClickAdd={this.addTrainer} />
             </div>
           </div>
 

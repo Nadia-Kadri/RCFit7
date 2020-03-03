@@ -4,6 +4,17 @@ import Trainer from "./Trainer";
 
 class Trainers extends Component {
 
+  state = {
+    email: ""
+  }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value.trim()
+    });
+  };
+
   componentDidMount() {
     
   }
@@ -32,6 +43,27 @@ class Trainers extends Component {
                 </div>
                 <div className="col-sm-6">
                   <h6>Add a Trainer</h6>
+                  <form>
+                    <div className="form-group">
+                      <label>Enter the email of the person you'd like to make a trainer</label>
+                      <input 
+                        type="email"
+                        className="form-control"
+                        name="email"
+                        placeholder="johnsmith@gmail.com"
+                        value={this.state.email}
+                        onChange={this.handleInputChange}
+                      />
+                    </div>
+                    <small>Is the Trainer not adding to the list on the left when you click "Add Trainer"? Make sure they're registered with the correct email!</small><br/>
+                    <button
+                      className="btn btn-primary btn-sm"
+                      disabled={
+                        this.state.email ? "" : "disabled"
+                      }
+                      onClick={this.props.onClickAdd.bind(this, this.state.email)}
+                    >Add Trainer</button>
+                  </form>
                 </div>
               </div>
             </div>

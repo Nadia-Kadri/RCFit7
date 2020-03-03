@@ -35,7 +35,14 @@ class Classes extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      {this.props.classes.map(e => <Class key={e._id} title={e.title} duration={e.duration} />)}
+                      {this.props.classes.map(e => 
+                        <Class 
+                          key={e._id} 
+                          id={e._id} 
+                          title={e.title} 
+                          duration={e.duration} 
+                          onClickDelete={e.onClickDelete} 
+                        />)}
                     </tbody>
                   </table>
                 </div>
@@ -69,7 +76,7 @@ class Classes extends Component {
                       disabled={
                         this.state.title && this.state.duration ? "" : "disabled"
                       }
-                      onClick={this.props.onClick.bind(this, this.state.title, this.state.duration)}
+                      onClick={this.props.onClickAdd.bind(this, this.state.title, this.state.duration)}
                     >Submit</button>
                   </form>
                 </div>
