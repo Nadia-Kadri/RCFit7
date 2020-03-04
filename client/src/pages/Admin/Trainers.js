@@ -37,7 +37,15 @@ class Trainers extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      {this.props.trainers.map(trainer => <Trainer key={trainer._id} userId={trainer._id} firstName={trainer.firstName} lastName={trainer.lastName} />)}
+                      {this.props.trainers.map(trainer => 
+                        <Trainer 
+                          key={trainer._id} 
+                          id={trainer._id} 
+                          firstName={trainer.firstName} 
+                          lastName={trainer.lastName}
+                          onClickDelete={this.props.onClickDelete} 
+                        />)
+                      }
                     </tbody>
                   </table>
                 </div>

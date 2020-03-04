@@ -21,5 +21,8 @@ export default {
   },
   addTrainer: function (email) {
     return axios.put("/api/create/trainer/" + email)
+  },
+  deleteTrainer: function (id) {
+    return axios.put("/api/delete/trainer/" + id)
   }
 };
