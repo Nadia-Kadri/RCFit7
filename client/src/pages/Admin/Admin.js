@@ -85,7 +85,7 @@ class Admin extends Component {
       trainer: trainer
     })
       .then(res => {
-        res.data.errmsg ? alert("Can't add, duplicate datetime") : this.getSchedules()
+        res.data.errmsg ? alert("Error! Can't add because of duplicate datetime") : this.getSchedules()
       })
       .catch(err => console.log(err))
   }
