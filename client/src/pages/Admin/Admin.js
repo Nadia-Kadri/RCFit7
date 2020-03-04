@@ -53,9 +53,15 @@ class Admin extends Component {
   };
 
   deleteClass = (id) => {
-    classAPI.deleteClass(id)
-      .then(res => this.getClasses())
-      .catch(err => console.log(err))
+    let found = this.state.schedules.some(schedule => schedule.class._id === id)
+    found ? 
+    (
+      alert("Error! Can't delete this") 
+    ) : (
+      classAPI.deleteClass(id)
+        .then(res => this.getClasses())
+        .catch(err => console.log(err))
+    )
   }
 
   addTrainer = (email, event) => {
@@ -78,7 +84,9 @@ class Admin extends Component {
       class: e,
       trainer: trainer
     })
-      .then(res => this.getSchedules())
+      .then(res => {
+        res.data.errmsg ? alert("Can't add, duplicate datetime") : this.getSchedules()
+      })
       .catch(err => console.log(err))
   }
 
@@ -90,11 +98,7 @@ class Admin extends Component {
 
   getUsers = (id) => {
     scheduleAPI.viewUsers(id)
-      .then(res => {
-        this.setState({
-          users: res.data.users
-        })
-      })
+      .then(res => this.setState({users: res.data.users}))
       .catch(err => console.log(err))
   }
 
