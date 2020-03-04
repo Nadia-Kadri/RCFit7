@@ -13,6 +13,9 @@ export default {
   createSchedule: function (schedule) {
     return axios.post("api/schedule/create", schedule)
   },
+  deleteSchedule: function (scheduleId) {
+    return axios.delete("api/schedule/delete/" + scheduleId)
+  },
   viewUsers: function (scheduleId) {
     return axios.get("/api/schedule/admin/view/" + scheduleId)
   }

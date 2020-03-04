@@ -1,4 +1,4 @@
-.delete-class-button, .delete-trainer-button, .delete-schedule-button {
+.delete-class-button, .delete-trainer-button, .delete-schedule-button, .view-users-schedule-button, .edit-schedule-button {
   width: 10px;
   height: 20px;
   font-size: 10px;
