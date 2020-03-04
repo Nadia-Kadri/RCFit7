@@ -35,6 +35,7 @@ class CurrentSchedules extends Component {
                       trainer={schedule.trainer.firstName}
                       users={schedule.users}
                       onClickViewUsers={this.props.onClickViewUsers}
+                      onClickDelete={this.props.onClickDelete}
                     />
                   )}
 

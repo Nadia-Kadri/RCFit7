@@ -21,6 +21,18 @@ router.post("/create", function(req, res) {
   .catch(err => console.log(err.message));
 });
 
+// Delete route for Admin to delete a class
+router.delete("/delete/:id", function(req, res) {
+  console.log("deleting schedule");
+
+  db.Schedule.deleteOne({ _id: req.params.id })
+  .then(result => {
+    console.log(result)
+    res.send(result)
+  })
+  .catch(err => console.log(err.message));
+})
+
 // Get route for schedule to display to users
 router.get("/userView", function(req, res) {
   console.log("view schedule");

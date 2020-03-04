@@ -7,7 +7,6 @@ import Modal from "./Modals/Schedule";
 import classAPI from "../../utils/classAPI";
 import userAPI from "../../utils/userAPI";
 import scheduleAPI from "../../utils/scheduleAPI";
-
 // import "./index.css";
 
 class Admin extends Component {
@@ -83,13 +82,18 @@ class Admin extends Component {
       .catch(err => console.log(err))
   }
 
+  deleteSchedule = (id) => {
+    scheduleAPI.deleteSchedule(id)
+      .then(res => this.getSchedules())
+      .catch(err => console.log(err))
+  }
+
   getUsers = (id) => {
     scheduleAPI.viewUsers(id)
       .then(res => {
         this.setState({
           users: res.data.users
         })
-        console.log(this.state.users)
       })
       .catch(err => console.log(err))
   }
@@ -133,7 +137,7 @@ class Admin extends Component {
 
           <div className="row">
             <div className="col-sm-12">
-              <CurrentSchedules schedules={this.state.schedules} onClickViewUsers={this.getUsers} />
+              <CurrentSchedules schedules={this.state.schedules} onClickViewUsers={this.getUsers} onClickDelete={this.deleteSchedule} />
             </div>
           </div>
 
