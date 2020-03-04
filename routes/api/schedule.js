@@ -18,10 +18,7 @@ router.post("/create", function(req, res) {
     })
     .catch(err => console.log(err.message));
   })
-  .catch(err => {
-    console.log(err.message)
-    res.send(err)
-  });
+  .catch(err => console.log(err.message));
 });
 
 // Delete route for Admin to delete a class

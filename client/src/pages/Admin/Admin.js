@@ -78,6 +78,9 @@ class Admin extends Component {
   }
 
   addSchedule = (datetime, e, trainer, event) => {
+    // console.log(datetime)
+    // console.log(e)
+    // console.log(trainer)
     event.preventDefault();
     scheduleAPI.createSchedule({
       datetime: datetime,
@@ -85,7 +88,8 @@ class Admin extends Component {
       trainer: trainer
     })
       .then(res => {
-        res.data.errmsg ? alert("Error! Can't add because of duplicate datetime") : this.getSchedules()
+        console.log(res)
+        this.getSchedules()
       })
       .catch(err => console.log(err))
   }

@@ -17,7 +17,6 @@ class BuildSchedule extends Component {
     this.setState({
       [name]: value
     });
-    console.log(this.state)
     this.convertDate()
   };
 
