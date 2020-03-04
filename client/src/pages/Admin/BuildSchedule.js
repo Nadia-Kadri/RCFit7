@@ -66,6 +66,7 @@ class BuildSchedule extends Component {
                     <div className="form-group">
                       <label>Class</label>
                       <select className="form-control" name="class" onChange={this.handleInputChange}>
+                        <option value={""}></option>
                         {this.props.classes.map(e => <option key={e._id} value={e._id} >{e.title}</option>)}
                       </select>
                     </div>
@@ -75,6 +76,7 @@ class BuildSchedule extends Component {
                     <div className="form-group">
                       <label>Trainer</label>
                       <select className="form-control" name="trainer" onChange={this.handleInputChange}>
+                        <option value={""}></option>
                         {this.props.trainers.map(trainer => <option key={trainer._id} value={trainer._id}>{trainer.firstName} {trainer.lastName}</option>)}
                       </select>
                     </div>
