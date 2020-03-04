@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../../models");
+const moment = require("moment");
 var isAuthenticated = require("../../config/middleware/isAuthenticated");
 
 // Post route for Admin to create a scheduled class
@@ -33,7 +34,7 @@ router.delete("/delete/:id", function(req, res) {
   .catch(err => console.log(err.message));
 })
 
-// Get route for schedule to display to users
+// Get route for schedule to display to users and Admin
 router.get("/userView", function(req, res) {
   console.log("view schedule");
 
@@ -41,8 +42,9 @@ router.get("/userView", function(req, res) {
   .populate("class")
   .populate("trainer")
   .then(result => {
-    console.log(result)
-    res.send(result)
+    const futureSchedules = result.filter(schedule => {return schedule.datetime > moment()})
+    console.log(futureSchedules)
+    res.send(futureSchedules)
   })
   .catch(err => console.log(err.message));
 })
