@@ -41,7 +41,7 @@ class Classes extends Component {
                           id={e._id} 
                           title={e.title} 
                           duration={e.duration} 
-                          onClickDelete={e.onClickDelete} 
+                          onClickDelete={this.props.onClickDelete} 
                         />)}
                     </tbody>
                   </table>

@@ -3,11 +3,6 @@ import Schedule from "./Schedule";
 // import "./index.css";
 
 class CurrentSchedules extends Component {
-
-  componentDidMount() {
-    
-  }
-  
   render() {
     return (
       <React.Fragment>
@@ -39,6 +34,7 @@ class CurrentSchedules extends Component {
                       duration={schedule.class.duration}
                       trainer={schedule.trainer.firstName}
                       users={schedule.users}
+                      onClickViewUsers={this.props.onClickViewUsers}
                     />
                   )}
 

@@ -3,9 +3,11 @@ import Classes from "./Classes";
 import Trainers from "./Trainers";
 import BuildSchedule from "./BuildSchedule";
 import CurrentSchedules from "./CurrentSchedules";
+import Modal from "./Modals/Schedule";
 import classAPI from "../../utils/classAPI";
 import userAPI from "../../utils/userAPI";
 import scheduleAPI from "../../utils/scheduleAPI";
+
 // import "./index.css";
 
 class Admin extends Component {
@@ -13,7 +15,8 @@ class Admin extends Component {
   state = {
     classes: [],
     trainers: [],
-    schedules: []
+    schedules: [],
+    users: []
   };
 
   componentDidMount() {
@@ -24,28 +27,19 @@ class Admin extends Component {
 
   getClasses = () => {
     classAPI.viewClasses()
-      .then(res => { 
-        this.setState({ classes: res.data })
-        // console.log(this.state.classes)
-      })
+      .then(res => this.setState({ classes: res.data }))
       .catch(err => console.log(err))
   };
 
   getTrainers = () => {
     userAPI.viewTrainers()
-      .then(res => { 
-        this.setState({ trainers: res.data })
-        // console.log(this.state.trainers)
-      })
+      .then(res => this.setState({ trainers: res.data }))
       .catch(err => console.log(err))
   };
 
   getSchedules = () => {
     scheduleAPI.userSchedule()
-      .then(res => { 
-        this.setState({ schedules: res.data })
-        // console.log(this.state.schedules)
-      })
+      .then(res => this.setState({ schedules: res.data }))
       .catch(err => console.log(err))
   };
 
@@ -55,48 +49,47 @@ class Admin extends Component {
       title: title,
       duration: duration
     })
-      .then(res => { 
-        // this.setState({ schedules: res.data })
-        console.log(res);
-        this.getClasses();
-      })
+      .then(res => this.getClasses())
       .catch(err => console.log(err))
   };
 
   deleteClass = (id) => {
-    console.log(id)
-    // classAPI.deleteClass(id)
-    // .then(res => { 
-    //   // this.setState({ schedules: res.data })
-    //   console.log(res);
-    //   this.getClasses();
-    // })
-    // .catch(err => console.log(err))
+    classAPI.deleteClass(id)
+      .then(res => this.getClasses())
+      .catch(err => console.log(err))
   }
 
   addTrainer = (email, event) => {
     event.preventDefault();
     userAPI.addTrainer(email)
-      .then(res => { 
-        console.log(res);
-        this.getTrainers();
-      })
+      .then(res => this.getTrainers())
+      .catch(err => console.log(err))
+  }
+
+  deleteTrainer = (id) => {
+    userAPI.deleteTrainer(id)
+      .then(res => this.getTrainers())
       .catch(err => console.log(err))
   }
 
   addSchedule = (datetime, e, trainer, event) => {
     event.preventDefault();
-    // console.log(datetime)
-    // console.log(e)
-    // console.log(trainer)
     scheduleAPI.createSchedule({
       datetime: datetime,
       class: e,
       trainer: trainer
     })
-      .then(res => { 
-        console.log(res);
-        this.getSchedules();
+      .then(res => this.getSchedules())
+      .catch(err => console.log(err))
+  }
+
+  getUsers = (id) => {
+    scheduleAPI.viewUsers(id)
+      .then(res => {
+        this.setState({
+          users: res.data.users
+        })
+        console.log(this.state.users)
       })
       .catch(err => console.log(err))
   }
@@ -128,7 +121,7 @@ class Admin extends Component {
               <Classes classes={this.state.classes} onClickAdd={this.addClass} onClickDelete={this.deleteClass} />
             </div>
             <div className="col-sm-6">
-              <Trainers trainers={this.state.trainers} onClickAdd={this.addTrainer} />
+              <Trainers trainers={this.state.trainers} onClickAdd={this.addTrainer} onClickDelete={this.deleteTrainer} />
             </div>
           </div>
 
@@ -140,11 +133,12 @@ class Admin extends Component {
 
           <div className="row">
             <div className="col-sm-12">
-              <CurrentSchedules schedules={this.state.schedules} />
+              <CurrentSchedules schedules={this.state.schedules} onClickViewUsers={this.getUsers} />
             </div>
           </div>
 
         </div>
+        <Modal users={this.state.users} />
       </React.Fragment>
     );
   }

@@ -1,15 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "./index.css";
 
-class Trainer extends Component {
-  render() {
-    return (
+const Trainer = (props) => (
       <tr>
-        <td>{this.props.firstName} {this.props.lastName}</td>
-        <td><span className="btn btn-outline-danger delete-trainer-button text-center">X</span></td>
+        <td>{props.firstName} {props.lastName}</td>
+        <td><span className="btn btn-outline-danger delete-trainer-button text-center" id={props.id} onClick={() => props.onClickDelete(props.id)} >X</span></td>
+        
       </tr>
     );
-  }
-}
 
 export default Trainer;
