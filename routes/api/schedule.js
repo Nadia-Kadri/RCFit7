@@ -56,7 +56,7 @@ router.put("/user/cancel/:scheduleId", isAuthenticated, function(req, res) {
 });
 
 // Get route for Admin to see who is signed up for a specific classes
-router.get("/adminView/:id", function(req, res) {
+router.get("/admin/view/:id", function(req, res) {
   db.Schedule.findOne({ _id: req.params.id })
     .populate("users")
     .then(result => {
