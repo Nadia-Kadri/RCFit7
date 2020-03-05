@@ -6,7 +6,6 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import MembershipOptions from "./pages/MembershipOptions";
 import Schedule from "./pages/Schedule/Schedule";
 import Contact from "./pages/Contact";
 import UserProfile from "./pages/UserProfile/UserProfile";
@@ -97,10 +96,6 @@ class App extends Component {
                 <About />
               </Route>
 
-              <Route exact path="/membership/options">
-                <MembershipOptions />
-              </Route>
-
               <Route exact path="/schedule">
                 <Schedule userId={this.state.userId} />
               </Route>
@@ -125,14 +120,6 @@ class App extends Component {
                   <Redirect to="/login" />
                 )}
               </Route>
-
-             {/* <Route exact path="/protected">
-                {this.state.authorized ? (
-                  <Protected logout={this.logout} />
-                ) : (
-                    <Redirect to="/login" />
-                  )}
-              </Route>  */}
 
               <Route>
                 <Redirect to="/" />

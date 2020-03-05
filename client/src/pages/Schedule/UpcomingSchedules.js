@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/scheduleAPI";
 import UpcomingSchedule from "./UpcomingSchedule";
-import LoginModal from "./Modals/LoginModal";
-import SignUpModal from "./Modals/SignUpModal";
-import CancelModal from "./Modals/CancelModal";
 
 class UpcomingSchedules extends Component {
 
@@ -79,9 +76,6 @@ class UpcomingSchedules extends Component {
             onClickCancel={this.onClickCancel}
           />
         ))}
-        <LoginModal />
-        <SignUpModal />
-        <CancelModal />
       </React.Fragment>
     );
   }

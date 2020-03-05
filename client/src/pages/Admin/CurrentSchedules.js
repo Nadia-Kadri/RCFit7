@@ -19,7 +19,7 @@ class CurrentSchedules extends Component {
                     <th scope="col">Title</th>
                     <th scope="col">Trainer</th>
                     <th scope="col">View Users</th>
-                    <th scope="col">Edit</th>
+                    {/* <th scope="col">Edit</th> */}
                     <th scope="col">Delete</th>
                   </tr>
                 </thead>
