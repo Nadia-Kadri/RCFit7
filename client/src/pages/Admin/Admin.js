@@ -122,7 +122,7 @@ class Admin extends Component {
               <div className="card bg-light mb-3">
                 <div className="card-body">
                   <h2 className="card-title">Welcome {this.props.user.firstName}!</h2>
-                  <p className="card-text">This is your protected Admin Page that only you have access to. On this page you can add recurring classes, update trainers, build your schedule and much more. Scroll down to get started!</p>
+                  <p className="card-text">This is your Admin Page that only you have access to. On this page you can add recurring classes, update trainers, build your schedule and much more. Scroll down to get started!</p>
                 </div>
               </div>
             </div>

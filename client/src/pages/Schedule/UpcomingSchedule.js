@@ -1,32 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 import Button from "./Button";
 import moment from "moment";
 
-class UpcomingSchedule extends Component {
+const UpcomingSchedule = (props) => (
+  <tr>
+    <td>{props.title}</td>
+    <td>{moment(props.datetime, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("dddd h:mmA")}</td>
+    <td>{props.duration}</td>
+    <td>{props.trainer}</td>
+    <td>
+      <Button 
+        id={props.id} 
+        users={props.users}
+        userId={props.userId}
+        isSignedUp={props.isSignedUp}
+        onClickSignUp={props.onClickSignUp}
+        onClickCancel={props.onClickCancel}
+      />
+    </td>
+  </tr>
+);
 
-  render() {
-    return (
-      <React.Fragment>
-        <div className="card">
-          <div className="card-body">
-            <span className="card-title">{this.props.title} {this.props.duration}</span>
-            <span className="time-sign-up">
-              <div className="time">{moment(this.props.datetime, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("dddd h:mmA")}</div>
-              <Button 
-                id={this.props.id} 
-                users={this.props.users}
-                userId={this.props.userId}
-                isSignedUp={this.props.isSignedUp}
-                onClickSignUp={this.props.onClickSignUp}
-                onClickCancel={this.props.onClickCancel}
-              />
-            </span>
-            <p className="card-text">{this.props.trainer}</p>
-          </div>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
 
 export default UpcomingSchedule;

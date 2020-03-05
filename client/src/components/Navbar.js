@@ -20,12 +20,6 @@ class Navbar extends React.Component {
                 </span>
               </Link>
 
-              <Link to="/membership/options" className={window.location.pathname === "/membershipOptions" ? "nav-link active" : "nav-link"}>
-                <span className="float-right">
-                  Membership Options <span className="sr-only">(current)</span>
-                </span>
-              </Link>
-
               <Link to="/schedule" className={window.location.pathname === "/schedule" ? "nav-link active" : "nav-link"}>
                 <span className="float-right">
                   Schedule <span className="sr-only">(current)</span>
@@ -39,7 +33,7 @@ class Navbar extends React.Component {
               </Link>
             </div>
             {this.props.authorized && !this.props.isAdmin
-              ? (<Link to="/user/profile">
+              ? (<Link to="/user/profile" className={window.location.pathname === "/user/profile" ? "nav-link active" : "nav-link"}>
                     <span className="float-right">
                       User Profile <span className="sr-only">(current)</span>
                     </span>
@@ -47,7 +41,7 @@ class Navbar extends React.Component {
               : ""
             }
             {this.props.authorized && this.props.isAdmin
-              ? (<Link to="/admin">
+              ? (<Link to="/admin" className={window.location.pathname === "/admin" ? "nav-link active" : "nav-link"}>
                   <span className="float-right">
                     Admin Page <span className="sr-only">(current)</span>
                   </span>
@@ -64,21 +58,6 @@ class Navbar extends React.Component {
             }
           </div>
         </nav>
-        {/* <nav className="navbar fixed-bottom navbar-light bg-light">
-          <a className="navbar-brand text-center" href="#">
-            231B North Village Blvd. <br />
-            Celebration, FL 34747
-          </a>
-          <a className="navbar-brand text-center" href="#">
-            RCFIT7@rcfit7.com <br />
-            321-688-1279
-          </a>
-          <a className="navbar-brand text-center" href="#">
-            Instagram
-            <br />
-            Facebook
-          </a>
-        </nav> */}
       </React.Fragment>
     );
   }
