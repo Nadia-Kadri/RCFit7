@@ -95,6 +95,7 @@ class Login extends Component {
 }
 
 const contStyle = {
+  marginTop: "20px",
   width: "300px"
 }
 
