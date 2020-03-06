@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import moment from "moment";
 // import "./index.css";
 
 class BuildSchedule extends Component {
@@ -7,7 +6,6 @@ class BuildSchedule extends Component {
   state = {
     date: "",
     time: "",
-    datetime: "",
     class: "",
     trainer: ""
   };
@@ -16,15 +14,6 @@ class BuildSchedule extends Component {
     const { name, value } = event.target;
     this.setState({
       [name]: value
-    });
-    this.convertDate()
-  };
-
-  convertDate = () => {
-    let datetime = this.state.date+this.state.time;
-    let convertedDate = moment(datetime, "YYYY-MM-DDHH:mm").utc().format("YYYY-MM-DDTHH:mm:ss.SSS[Z]");
-    this.setState({
-      datetime: convertedDate
     });
   };
   
@@ -90,7 +79,7 @@ class BuildSchedule extends Component {
                     disabled={
                       this.state.date && this.state.time && this.state.class && this.state.trainer ? "" : "disabled"
                     }
-                    onClick={this.props.onClick.bind(this, this.state.datetime, this.state.class, this.state.trainer)}
+                    onClick={this.props.onClick.bind(this, this.state.date, this.state.time, this.state.class, this.state.trainer)}
                   >Submit</button>
                   </div>
                 </div>

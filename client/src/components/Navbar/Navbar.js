@@ -15,7 +15,7 @@ class Navbar extends React.Component {
             }
           >
             <div>
-              <SvgComponent style={{ height: "70px", width: "70px" }} />
+              <SvgComponent style={{ height: "60px", width: "60px" }} />
             </div>
             <h3></h3>
           </Link>
