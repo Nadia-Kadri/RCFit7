@@ -4,6 +4,7 @@ import ScheduleCalendar from "./ScheduleCalendar";
 import LoginModal from "./Modals/LoginModal";
 import SignUpModal from "./Modals/SignUpModal";
 import CancelModal from "./Modals/CancelModal";
+import backgroundImage from "../../images/schedulepage.jpg";
 import "./index.css";
 
 class Schedule extends Component {
@@ -11,6 +12,7 @@ class Schedule extends Component {
   render() {
     return (
       <React.Fragment>
+        {/* <div style={{backgroundImage: `url(${backgroundImage})`, height: 500, width: `100%`}}></div> */}
         <div className="custContainer">
           <div className="row m-1">
             <div className="col-sm-12">
@@ -21,11 +23,11 @@ class Schedule extends Component {
           <div className="row">
 
             <div className="col-sm-6">
-              <div className="card bg-light mb-3">
+              <div className="card bg-light mb-3 custCard upcomingLeft">
                 <div className="card-body">
                   <h4 className="card-title">Upcoming Classes</h4>
                   <div className="card-text">
-                    <h6>Below are the upcoming classes available to Sign-Up for!</h6>
+                    <h6>Below are this week's upcoming classes, click Sign-Up to reserve your spot!</h6>
                     <table className="table table-hover table-sm">
                       <thead>
                         <tr>
@@ -45,8 +47,8 @@ class Schedule extends Component {
               </div>
             </div>
 
-            <div className="col-sm-6">
-              <div className="card bg-light mb-3">
+            <div className="col-sm-6 upcomingRight">
+              <div className="card bg-light mb-3 custCard">
                 <div className="card-body">
                   photo
                 </div>
@@ -56,9 +58,9 @@ class Schedule extends Component {
 
           <div className="row">
             <div className="col-sm-12">
-              <div className="card bg-light mb-3">
+              <div className="card bg-light mb-3 custCard">
                 <div className="card-body">
-                  <h4 className="card-title">Full Schedule</h4>
+                  <h4 className="card-title">Monthly Schedule</h4>
                   <div className="card-text">
                     <h6>Like to plan ahead? View the entire schedule below!</h6>
                     <div className="ml-5 mr-5">

@@ -40,7 +40,7 @@ class ScheduleCalendar extends Component {
         <Calendar
           localizer={localizer}
           defaultDate={new Date()}
-          defaultView="week"
+          defaultView="month"
           events={this.state.events}
           style={{ height: "70vh" }}
           startAccessor="start"

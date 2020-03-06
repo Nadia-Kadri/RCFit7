@@ -39,6 +39,7 @@ router.get("/userView", function(req, res) {
   console.log("view schedule");
 
   db.Schedule.find({})
+  .sort({ datetime: 1 })
   .populate("class")
   .populate("trainer")
   .then(result => {

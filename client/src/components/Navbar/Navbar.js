@@ -76,18 +76,28 @@ class Navbar extends React.Component {
                 to="/contact"
                 className={
                   window.location.pathname === "/contact"
-                    ? "nav-link active"
-                    : "nav-link"
+                    ? "nav-link active border-right"
+                    : "nav-link border-right"
                 }
               >
                 <span className="float-right text">
                   Contact <span className="sr-only">(current)</span>
                 </span>
               </Link>
-            </div>
-            {this.props.authorized && !this.props.isAdmin ? (
-              <Link to="/user/profile">
-                <span className="float-right">
+
+
+
+
+
+              {this.props.authorized && !this.props.isAdmin ? (
+              <Link 
+                to="/user/profile"
+                className={
+                  window.location.pathname === "/user/profile"
+                    ? "nav-link active border-right"
+                    : "nav-link border-right"
+                }>
+                <span className="float-right text">
                   User Profile <span className="sr-only">(current)</span>
                 </span>
               </Link>
@@ -95,8 +105,14 @@ class Navbar extends React.Component {
               ""
             )}
             {this.props.authorized && this.props.isAdmin ? (
-              <Link to="/admin">
-                <span className="float-right mx-1">
+              <Link 
+                to="/admin"
+                className={
+                  window.location.pathname === "/admin"
+                    ? "nav-link active border-right"
+                    : "nav-link border-right"
+                }>
+                <span className="float-right text">
                   Admin Page <span className="sr-only">(current)</span>
                 </span>
               </Link>
@@ -104,19 +120,33 @@ class Navbar extends React.Component {
               ""
             )}
             {this.props.authorized ? (
-              <button
-                className="btn-primary mx-1 login-logout"
-                onClick={this.props.logout}
-              >
-                Logout
-              </button>
+              <Link 
+                to="/"
+                className={
+                  window.location.pathname === "/"
+                    ? "nav-link active"
+                    : "nav-link"
+                }>
+                <span className="float-right text" onClick={this.props.logout}>
+                  Logout <span className="sr-only">(current)</span>
+                </span>
+              </Link>
             ) : (
-              <Link to="/login">
-                <span className="float-right login-logout">
-                  <button>Login / Sign-Up</button>
+              <Link 
+                to="/login"
+                className={
+                  window.location.pathname === "/login"
+                    ? "nav-link active"
+                    : "nav-link"
+                }>
+                <span className="float-right text">
+                  Login / Sign-Up <span className="sr-only">(current)</span>
                 </span>
               </Link>
             )}
+
+
+            </div>
           </div>
         </nav>
       </React.Fragment>

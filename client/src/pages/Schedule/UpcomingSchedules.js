@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/scheduleAPI";
 import UpcomingSchedule from "./UpcomingSchedule";
+import moment from "moment"
 
 class UpcomingSchedules extends Component {
 
@@ -31,7 +32,8 @@ class UpcomingSchedules extends Component {
             isSignedUp: isSignedUp
           })
         }
-        this.setState({ schedules: schedulesArr })
+        const signUpSchedulesArr = schedulesArr.filter(e => {return e.datetime < moment().add(7, 'days')})
+        this.setState({ schedules: signUpSchedulesArr })
       })
       .catch(err => console.log(err))
   }

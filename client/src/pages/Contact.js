@@ -54,16 +54,16 @@ class Contact extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container">
+        <div className="custContainer ml-5 mr-5">
 
           <div className="row">
             <div className="col-sm-12">
-              <h1>CONTACT US</h1>
+              <h1>Contact Us</h1>
             </div>
           </div>
 
           <div className="row">
-            <div className="col-sm-6">
+            <div className="col-sm-4 mr-5">
               <form
                 className="contact-form cust-form"
                 onSubmit={e => this.formSubmit(e)}
@@ -123,7 +123,7 @@ class Contact extends React.Component {
               </form>
             </div>
 
-            <div className="col-sm-6 my-4">
+            <div className="col-sm-4 ml-5">
               <h4>Reach Out to Us!</h4>
               <p>
                 We'd love to hear about your progress, help with any questions, or
