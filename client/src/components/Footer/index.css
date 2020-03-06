@@ -1,6 +1,5 @@
-.footer {
-  height: 60px;
-  font-size: 10px;
+.cust-footer {
+ background-color: grey;
 }
 
 .footer-text {

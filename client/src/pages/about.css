@@ -1,0 +1,29 @@
+.image-w-content {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.icon {
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.image-w-content,
+.icon {
+  padding: 0px;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  margin: -47px 0 0 -47px;
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 9;
+  background: white;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
