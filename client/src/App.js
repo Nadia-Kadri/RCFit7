@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -126,7 +126,7 @@ class App extends Component {
               </Route>
 
             </Switch>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         ) : ""}
       </Router>
