@@ -83,6 +83,7 @@ class Login extends Component {
                   }
                   onClick={this.login}
                 >Login</button>
+                <br></br>
                 <Link to="/register">Not registered? Click here.</Link>
               </form>
             </div>
