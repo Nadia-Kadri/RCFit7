@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d8effca0.chunk.css",
+    "main.js": "/static/js/main.ba1773fe.chunk.js",
+    "main.js.map": "/static/js/main.ba1773fe.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cea588d5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cea588d5.js.map",
+    "static/css/2.25b83785.chunk.css": "/static/css/2.25b83785.chunk.css",
+    "static/js/2.d7445530.chunk.js": "/static/js/2.d7445530.chunk.js",
+    "static/js/2.d7445530.chunk.js.map": "/static/js/2.d7445530.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.84d7675bc9634b87d48d8bc283e85dee.js": "/precache-manifest.84d7675bc9634b87d48d8bc283e85dee.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.25b83785.chunk.css.map": "/static/css/2.25b83785.chunk.css.map",
+    "static/css/main.d8effca0.chunk.css.map": "/static/css/main.d8effca0.chunk.css.map",
+    "static/js/2.d7445530.chunk.js.LICENSE.txt": "/static/js/2.d7445530.chunk.js.LICENSE.txt",
+    "static/media/adult-cutting-daylight-facial-expression-1153369.jpg": "/static/media/adult-cutting-daylight-facial-expression-1153369.ea3c435b.jpg",
+    "static/media/bruce-mars-ZXq7xoo98b0-unsplash.jpg": "/static/media/bruce-mars-ZXq7xoo98b0-unsplash.7b64f82b.jpg",
+    "static/media/exercise.jpg": "/static/media/exercise.9cb4edcb.jpg",
+    "static/media/ladderdrill.mp4": "/static/media/ladderdrill.328255d2.mp4",
+    "static/media/meghan-holmes-wy_L8W0zcpI-unsplash.jpg": "/static/media/meghan-holmes-wy_L8W0zcpI-unsplash.23ecdbd6.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cea588d5.js",
+    "static/css/2.25b83785.chunk.css",
+    "static/js/2.d7445530.chunk.js",
+    "static/css/main.d8effca0.chunk.css",
+    "static/js/main.ba1773fe.chunk.js"
+  ]
+}
