@@ -192,6 +192,7 @@ class Register extends Component {
               }
               onClick={this.register}
             >Submit</button>
+            <br></br>
             <Link to="/login">Already registered? Click here.</Link>
           </div>
         </form>
