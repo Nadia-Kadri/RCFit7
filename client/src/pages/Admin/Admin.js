@@ -7,6 +7,7 @@ import Modal from "./Modals/Schedule";
 import classAPI from "../../utils/classAPI";
 import userAPI from "../../utils/userAPI";
 import scheduleAPI from "../../utils/scheduleAPI";
+import moment from "moment";
 // import "./index.css";
 
 class Admin extends Component {
@@ -77,13 +78,12 @@ class Admin extends Component {
       .catch(err => console.log(err))
   }
 
-  addSchedule = (datetime, e, trainer, event) => {
-    // console.log(datetime)
-    // console.log(e)
-    // console.log(trainer)
+  addSchedule = (date, time, e, trainer, event) => {
     event.preventDefault();
+    let datetime = date+time;
+  
     scheduleAPI.createSchedule({
-      datetime: datetime,
+      datetime: moment(datetime, "YYYY-MM-DDHH:mm").utc().format("YYYY-MM-DDTHH:mm:ss.SSS[Z]"),
       class: e,
       trainer: trainer
     })
