@@ -82,11 +82,11 @@ class UserProfile extends Component {
                       </tr>
                       <tr>
                         <th scope="row">Birthday:</th>
-                        <td>{moment(this.props.user.birthday, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("MM/DD/YY")}</td>
+                        <td>{moment(this.props.user.birthday, "YYYY-MM-DDTHH:mm:ss.SSSZ").utc().format("MM/DD/YY")}</td>
                       </tr>
                       <tr>
                         <th scope="row">Date Joined:</th>
-                        <td>{moment(this.props.user.created, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("MM/DD/YY")}</td>
+                        <td>{moment(this.props.user.created, "YYYY-MM-DDTHH:mm:ss.SSSZ").utc().format("MM/DD/YY")}</td>
                       </tr>
                     </tbody>
                   </table>
