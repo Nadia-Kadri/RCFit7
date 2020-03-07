@@ -4,7 +4,9 @@ import ScheduleCalendar from "./ScheduleCalendar";
 import LoginModal from "./Modals/LoginModal";
 import SignUpModal from "./Modals/SignUpModal";
 import CancelModal from "./Modals/CancelModal";
-import backgroundImage from "../../images/schedulepage.jpg";
+// import headerImage from "../../images/schedule3.jpg";
+import headerImage2 from "../../images/schedule4.jpg";
+import image from "../../images/schedule2.jpg";
 import "./index.css";
 
 class Schedule extends Component {
@@ -12,17 +14,32 @@ class Schedule extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <div style={{backgroundImage: `url(${backgroundImage})`, height: 500, width: `100%`}}></div> */}
+        <section
+          style={{
+            height: 540,
+            textAlign: "center",
+            backgroundImage: `url(${headerImage2})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            paddingTop: "60px",
+            backgroundPosition: "center center",
+            overflow: "hidden",
+            position: "relative"
+          }}
+        ></section>
+
         <div className="custContainer">
-          <div className="row m-1">
-            <div className="col-sm-12">
-              <h1>Schedule Page</h1>
-            </div>
+          <div className="row">
+            <div className="col-sm-12"></div>
           </div>
+          <div className="row justify-content-end m-4">
+            <h2>SCHEDULE</h2>
+          </div>
+          
 
           <div className="row">
 
-            <div className="col-sm-6">
+            <div className="col-sm-7">
               <div className="card bg-light mb-3 custCard upcomingLeft">
                 <div className="card-body">
                   <h4 className="card-title">Upcoming Classes</h4>
@@ -47,14 +64,8 @@ class Schedule extends Component {
               </div>
             </div>
 
-            <div className="col-sm-6 upcomingRight">
-              <div className="card bg-light mb-3 custCard">
-                <div className="card-body">
-                  photo
-                </div>
-              </div>
-            </div>
-          </div>
+            <img src={image} className="col-sm-5 mb-3"/>
+          </div> 
 
           <div className="row">
             <div className="col-sm-12">

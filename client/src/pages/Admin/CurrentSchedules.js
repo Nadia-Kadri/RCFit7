@@ -6,7 +6,7 @@ class CurrentSchedules extends Component {
   render() {
     return (
       <React.Fragment>
-       <div className="card bg-light mb-3">
+       <div className="card bg-light mb-3" style={{height: "400px", overflowY: "scroll"}}>
           <div className="card-body">
             <h4 className="card-title">Your Current Schedule</h4>
             <div className="card-text">

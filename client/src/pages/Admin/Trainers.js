@@ -27,7 +27,7 @@ class Trainers extends Component {
             <h4 className="card-title">Trainers</h4>
             <div className="card-text">
               <div className="row">
-                <div className="col-sm-6">
+                <div className="col-sm-6" style={{height: "250px", overflowY: "scroll"}}>
                   <h6>Current Trainers</h6>
                   <table className="table table-hover table-sm">
                     <thead>

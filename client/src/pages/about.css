@@ -1,3 +1,10 @@
+.custContainer {
+  margin-bottom: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+}
+
 .image-w-content {
   width: 100%;
   position: relative;

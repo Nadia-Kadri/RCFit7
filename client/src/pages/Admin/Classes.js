@@ -24,7 +24,7 @@ class Classes extends Component {
             <h4 className="card-title">Recurring Classes</h4>
             <div className="card-text">
               <div className="row">
-                <div className="col-sm-6">
+                <div className="col-sm-6" style={{height: "250px", overflowY: "scroll"}}>
                   <h6>Current Classes</h6>
                   <table className="table table-hover table-sm">
                     <thead>
