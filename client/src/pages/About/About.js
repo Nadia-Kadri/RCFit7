@@ -1,9 +1,9 @@
 import React from "react";
-import moduleName from "../images/exercise.jpg";
-import image from "../images/meghan-holmes-wy_L8W0zcpI-unsplash.jpg";
-import image2 from "../images/bruce-mars-ZXq7xoo98b0-unsplash.jpg";
-import image3 from "../images/adult-cutting-daylight-facial-expression-1153369.jpg";
-import SVG2 from "../components/SVG2";
+import moduleName from "../../images/exercise.jpg";
+import image from "../../images/meghan-holmes-wy_L8W0zcpI-unsplash.jpg";
+import image2 from "../../images/bruce-mars-ZXq7xoo98b0-unsplash.jpg";
+import image3 from "../../images/adult-cutting-daylight-facial-expression-1153369.jpg";
+import SVG2 from "../../components/SVG2";
 import "./about.css";
 
 class About extends React.Component {

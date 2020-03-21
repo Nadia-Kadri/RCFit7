@@ -4,7 +4,6 @@ import ScheduleCalendar from "./ScheduleCalendar";
 import LoginModal from "./Modals/LoginModal";
 import SignUpModal from "./Modals/SignUpModal";
 import CancelModal from "./Modals/CancelModal";
-// import headerImage from "../../images/schedule3.jpg";
 import headerImage2 from "../../images/schedule4.jpg";
 import image from "../../images/schedule2.jpg";
 import "./index.css";

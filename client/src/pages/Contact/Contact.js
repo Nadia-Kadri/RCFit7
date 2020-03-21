@@ -1,5 +1,5 @@
 import React from "react";
-import API from "../utils/contactAPI";
+import API from "../../utils/contactAPI";
 import { Link } from "react-router-dom";
 import "./contact.css";
 
