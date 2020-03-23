@@ -8,7 +8,7 @@ The RC Fit app has a custom administrator feature built using MongoDB that enabl
 
 This project was created at Trilogy Education Services through the University of Central Florida over three weeks beginning February 2020.
 
-![Homepage](https://github.com/dahliakadri/movies_by_destination/blob/master/static/img/moodymovie.gif "Homepage")
+![Homepage](https://media.giphy.com/media/Sw00jEgoSKOuwcRjrb/giphy.gif "Homepage")
 
 ## Contents
 
@@ -31,9 +31,9 @@ This project was created at Trilogy Education Services through the University of
 | Passport | HTML5              |
 | Nodemon  | jQuery 3.4.1       |
 
-| API                    |
+<!-- | API                    |
 | ---------------------- |
-| Google Maps Javascript |
+| Google Maps Javascript | -->
 
 ---
 
@@ -78,9 +78,9 @@ Install dependencies:
 $ npm install
 ```
 
-Set your Google API restriction to your local IP address only and then add your Google Map API key into the moodMap.jsx file
+<!-- Set your Google API restriction to your local IP address only and then add your Google Map API key into the moodMap.jsx file
 
-    GoogleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=YourAPIKey&libraries=places`
+    GoogleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=YourAPIKey&libraries=places` -->
 
 Run the app from the command line
 
@@ -92,63 +92,79 @@ $ npm start
 
 ### Features
 
-Access the live webapp: [Moody Movies](http://moodymovies.sadraii.com)
+Access the live webapp: [RC Fit 7](https://rcfit7-react-app.herokuapp.com/)
 
 #### Login/Sign Up
 
-![Login/SignUp](https://github.com/dahliakadri/movies_by_destination/blob/master/static/img/moodymovielogin.gif "Login / Sign Up")
+Login / Sign-Up in order to sign-up for a class.
+
+![Login/SignUp](https://media.giphy.com/media/LpiJu4eJ58FU3nhs9w/giphy.gif "Login / Sign Up")
+
+#### Schedule Class
+
+After sigining in user can select class from upcoming classes.
+
+![Schedule Class](https://media.giphy.com/media/TEu9ggTRGAvW9t01LP/giphy.gif "Schedule Class")
+
+#### Remove Classes
+
+Registered users can also remove classes from their class list by clicking cancel.
+
+![Remove Classes](https://media.giphy.com/media/elzF3iSl9hPJgKHIXI/giphy.gif "Remove Classes")
 
 #### User Profile
 
-<img src="https://github.com/dahliakadri/movies_by_destination/raw/master/static/img/moodymovieprofile.png" alt="Profile" width="600">
+When user signs up for class they can go to their profile and view their profile information and view the classes that they signed up for with the date, time, name of class and the trainer teaching the class.
 
-#### Search Movies by Country
+![User Profile](https://media.giphy.com/media/YnNdsXf5rwqWbpM7aV/giphy.gif "User Profile")
 
-A drop down menue of all countries with movies appear on the homepage. Users can click on any country and view a list of top movies. Users can view movie details by hovering over each movie.
-
-![Movies by Country](https://github.com/dahliakadri/movies_by_destination/blob/master/static/img/moodymoviebycountry.gif "Movies by Country")
-
-#### Search Movies by Map
+<!-- #### Search Movies by Map
 
 Utilizing the Google Maps API, users can move around the map and browse countries that have movies, indicated by a golden ticket. Users can click on the ticket and view a list of top movies. Users can view movie details by hovering over each movie.
 
-![Movies by Map](https://github.com/dahliakadri/movies_by_destination/blob/master/static/img/moodymoviebymap.gif "Movies by Map")
+![Movies by Map](https://github.com/dahliakadri/movies_by_destination/blob/master/static/img/moodymoviebymap.gif "Movies by Map") -->
 
-#### Add Movies to Favorites
+#### Admin Login
 
-Registered users can save movies to their favorites list by clicking on as many movies as they want from a particular search and adding them. This can also be done by utilizing the Google Maps feature.
+Admin has their own user login which gives them acces to their own profile page.
 
-![Add Movies](https://github.com/dahliakadri/movies_by_destination/blob/master/static/img/moodymovieaddmovie.gif "Add Movies to Favorites")
+![Admin Login](https://media.giphy.com/media/H4zQN5KGhklzENooCO/giphy.gif "Admin Login")
 
-#### Remove Movies from Favorites
+#### Admin Creating Class
 
-Registered users can also remove movies from their favorites by clicking one or mutliple movies in their current favorites list and deleting.
+Admin can create classes.
 
-![Remove Movies](https://github.com/dahliakadri/movies_by_destination/blob/master/static/img/moodymovieremovemovie.gif "Remove Movies to Favorites")
+![Admin Creating Class](https://media.giphy.com/media/d9BnTjOGElcrt4gpIS/giphy.gif "Admin Creating Class")
 
-#### Logout
+#### Admin Adding Trainer
 
-![Logout](https://github.com/dahliakadri/movies_by_destination/blob/master/static/img/moodymovielogout.gif "Moody Logout")
+Admin can add a trainer from the users that have been registered through using their email address to populate their names.
 
----
+![Admin Adding Trainer](https://media.giphy.com/media/STwJgRLapNtTH9C8lk/giphy.gif "Admin Adding Trainer")
+
+#### Admin Adding Trainer and Class to Schedule
+
+Admin can assign a date, class, time, and trainer to the schedule for users to view.
+
+![Admin Adding Trainer and Class to Schedule](https://media.giphy.com/media/Ribyw8bCqnVNbDgsmr/giphy.gif "Admin Adding Trainer and Class to Schedule")
 
 ### <a name="featuresforv2.0"></a> Features for V2.0
 
 Future iterations of this project will include:
 
-- Movies about particular countries, built by a text analysis tool, specifically Google’s Natural Language Machine Learning API to pattern match through movie summaries
-- Ratings and reviews by users
-- Share movie recommendations
-- Where to watch particular movies on streaming apps
+- Mobile interface for users.
+- Users and trainers receiving notifications about upcoming classes they signed up for.
+- Payment feature for users through [Stripe](https://stripe.com/docs) or [Square](https://developer.squareup.com/us/en) APIs.
+- Share user classes to social media.
 
 ---
 
-### <a name="aboutthedeveloper"></a> About the Developer
+### <a name="aboutthedeveloper"></a> About the Developers
 
 RC Fit 7 creators and designers:
 
-[<img src="https://media-exp1.licdn.com/dms/image/C4D03AQH9bImUzEztVQ/profile-displayphoto-shrink_200_200/0?e=1590624000&v=beta&t=8Q89ixVklNYqqmnkjXeBlcBBSphqYJct9FD0dVa22Jw" height="70px" width="70px">](https://github.com/maserallm) [Nadia Kadri](https://github.com/maserallm)
+[<img src="https://media-exp1.licdn.com/dms/image/C4D03AQH9bImUzEztVQ/profile-displayphoto-shrink_200_200/0?e=1590624000&v=beta&t=8Q89ixVklNYqqmnkjXeBlcBBSphqYJct9FD0dVa22Jw" height="70px" width="70px">](https://github.com/Nadia-Kadri)<br>
+[Nadia Kadri](https://github.com/Nadia-Kadri) is a Financial Analyst at Lockheed Martin pursuing a career in software engineering. She can be found on [LinkedIn](https://www.linkedin.com/in/nadia-kadri-334415b3/) and [Github](https://github.com/Nadia-Kadri).<br>
 
-[<img src="https://media-exp1.licdn.com/dms/image/C4E03AQFuF0ueWRw_tw/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=nSqWVySUot2gTW_FialUtZQUlYNMp8WsDo7iQedVP50" height="70px" width="70px">](https://github.com/maserallm) [Maserall Marcelin](https://github.com/maserallm) is an Inventory Analyst at Publix Supermarkets, Inc. turned software developer. He can be found on [LinkedIn](https://www.linkedin.com/in/maserall-marcelin-76067a12b/) and [Github](https://github.com/maserallm)
-
-is a Technical Program Manager and Executive Assistant in security engineering at Box turned software engineer. This is her first fullstack project. She can be found on [LinkedIn](https://www.linkedin.com/in/dahliakadri/) and on [Github](https://github.com/dahliakadri).
+[<img src="https://media-exp1.licdn.com/dms/image/C4E03AQFuF0ueWRw_tw/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=nSqWVySUot2gTW_FialUtZQUlYNMp8WsDo7iQedVP50" height="70px" width="70px">](https://github.com/maserallm)<br>
+[Maserall Marcelin](https://github.com/maserallm) is an Inventory Analyst at Publix Supermarkets, Inc. turned software developer. He can be found on [LinkedIn](https://www.linkedin.com/in/maserall-marcelin-76067a12b/) and [Github](https://github.com/maserallm).
