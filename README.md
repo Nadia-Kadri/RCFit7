@@ -1,12 +1,12 @@
 # RC Fit 7 - Fitness Manager
 
-RC Fit 7 is a full-stack web application that allows users to sign-up for fitness classes with certain trainers, and track the classes they've taken. It also has an administrator that is able to create classes, add trainers, and view which users are signed up to specific classes.
+RC Fit 7 is a full-stack web application that allows users to sign-up for fitness classes with certain trainers, and track the classes they've taken.
 
 Access the live webapp: [RC Fit 7](https://rcfit7-react-app.herokuapp.com/)
 
-Moody Movies has a custom web interface that allows users to search for top movies from countries. Utilizing IMDB datasets, Moody's PostgreSQL database holds 180,000 movies with country origin, ratings, and votes. Users also search for movies by country in an interactive Google map. Users can add and remove movies from their favorites list.
+The RC Fit app has a custom administrator feature built using MongoDB that enables the admin to create classes, add trainers, and view which users are signed up to specific classes.
 
-This project was made at Hackbright Academy in San Francisco over eight weeks beginning January 2020.
+This project was created at Trilogy Education Services through the University of Central Florida over three weeks beginning February 2020.
 
 ![Homepage](https://github.com/dahliakadri/movies_by_destination/blob/master/static/img/moodymovie.gif "Homepage")
 
@@ -20,20 +20,19 @@ This project was made at Hackbright Academy in San Francisco over eight weeks be
 
 ### Technologies
 
-| Backend           |     Frontend      |
-| ----------------- | :---------------: |
-| Node.js           |   Javascript 6    |
-| MongoDB           |    React 16.2     |
-| Mongoose          |       CSS3        |
-| Express           | Twitter Bootstrap |
-| Passport.js       |       HTML5       |
-| Soup Sieve 2.0    |       AJAX        |
-| Beautiful Soup 4  |   jQuery 3.4.1    |
-| SQLAlchemy 1.3.10 |    Babel 6.26     |
+| Backend  | Frontend           |
+| -------- | ------------------ |
+| Node     | Javascript 6       |
+| MongoDB  | React 16.2         |
+| Mongoose | CSS3               |
+| Express  | Twitter Bootstrap  |
+| Axios    | React Big Calendar |
+| Moment   | React Router Dom   |
+| Passport | HTML5              |
+| Nodemon  | jQuery 3.4.1       |
 
-| APIs                   |
+| API                    |
 | ---------------------- |
-| IMDB Datasets          |
 | Google Maps Javascript |
 
 ---
