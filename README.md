@@ -147,8 +147,8 @@ Future iterations of this project will include:
 
 RC Fit 7 creators and designers:
 
-[<img src="https://media-exp1.licdn.com/dms/image/C4D03AQH9bImUzEztVQ/profile-displayphoto-shrink_200_200/0?e=1590624000&v=beta&t=8Q89ixVklNYqqmnkjXeBlcBBSphqYJct9FD0dVa22Jw" height="70px" width="70px">](https://github.com/maserallm) [Nadia Kadri](https://github.com/maserallm)
+[<img src="https://media-exp1.licdn.com/dms/image/C4D03AQH9bImUzEztVQ/profile-displayphoto-shrink_200_200/0?e=1590624000&v=beta&t=8Q89ixVklNYqqmnkjXeBlcBBSphqYJct9FD0dVa22Jw" height="70px" width="70px">](https://github.com/Nadia-Kadri)<br>
+[Nadia Kadri](https://github.com/Nadia-Kadri) is a Financial Analyst at Lockheed Martin pursuing a career in software engineering. She can be found on [LinkedIn](https://www.linkedin.com/in/nadia-kadri-334415b3/) and [Github](https://github.com/Nadia-Kadri).<br>
 
-[<img src="https://media-exp1.licdn.com/dms/image/C4E03AQFuF0ueWRw_tw/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=nSqWVySUot2gTW_FialUtZQUlYNMp8WsDo7iQedVP50" height="70px" width="70px">](https://github.com/maserallm) [Maserall Marcelin](https://github.com/maserallm) is an Inventory Analyst at Publix Supermarkets, Inc. turned software developer. He can be found on [LinkedIn](https://www.linkedin.com/in/maserall-marcelin-76067a12b/) and [Github](https://github.com/maserallm)
-
-is a Technical Program Manager and Executive Assistant in security engineering at Box turned software engineer. This is her first fullstack project. She can be found on [LinkedIn](https://www.linkedin.com/in/dahliakadri/) and on [Github](https://github.com/dahliakadri).
+[<img src="https://media-exp1.licdn.com/dms/image/C4E03AQFuF0ueWRw_tw/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=nSqWVySUot2gTW_FialUtZQUlYNMp8WsDo7iQedVP50" height="70px" width="70px">](https://github.com/maserallm)<br>
+[Maserall Marcelin](https://github.com/maserallm) is an Inventory Analyst at Publix Supermarkets, Inc. turned software developer. He can be found on [LinkedIn](https://www.linkedin.com/in/maserall-marcelin-76067a12b/) and [Github](https://github.com/maserallm).
