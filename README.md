@@ -41,65 +41,51 @@ This project was created at Trilogy Education Services through the University of
 
 #### Prerequisites
 
-You must have the following installed to run Moody Movies
+You must have the following installed to run RC Fit 7:
 
-- [PostgreSQL](https://www.postgresql.org/)
-- [Python 3.x](https://www.python.org/downloads/)
+- [Node](https://nodejs.org/en/)
+- [MongoDB](https://www.mongodb.com/)
+- [.env](https://www.npmjs.com/package/dotenv)
 - [API key for Google Maps JavaScript](https://developers.google.com/maps/documentation/javascript/tutorial)
 
-#### Run Moody Movies on your local computer
+#### Run RC Fit 7 on your local computer
 
-Download IMDB Movie Datasets:
+Download Compass GUI from [MongoDB Compass](https://www.mongodb.com/products/compass) or the Robo3t GUI from [Robomongo](https://robomongo.org/)
 
-> This application utilizes data from IMDB data sets of over 10 million
-> lines of data. The data was parsed with a python algorithm to seed
-> 180,000 movies into a PostgreSQL database. Download the three files below
-> and save to the main folder of the repo. Remove the first line of each dataset
-> before running the seed script.
-
-[Explanation of IMDB Datasets](https://www.imdb.com/interfaces/)
-
-- [**title.akas.tsv.gz**](https://datasets.imdbws.com/title.akas.tsv.gz%5C)
-- [**title.basics.tsv.gz**](https://datasets.imdbws.com/title.basics.tsv.gz)
-- [**title.ratings.tsv.gz**](https://datasets.imdbws.com/title.ratings.tsv.gz)
+> Both Compass and Robo 3t allow you to view the data that is being persisted to your database locally. Gives you the ability to modify, insert, and delete data manually in the GUI.
 
 Clone or fork repository:
 
-    $ git clone https://github.com/dahliakadri/movies_by_destination.git
+    $ git clone git@github.com:Nadia-Kadri/RCFit7.git
 
-Create and activate a virtual environment inside your Moody Movies directory:
+Create environment inside your root directory:
 
 ```
-$ virtualenv env
-$ source env/bin/activate
+$ touch .env
 ```
+
+Inside of .env file insert:
+
+```
+PASSPORT_SECRET=developer
+```
+
+You may change the word 'developer' to whatever you like. This word is used when encrypting and decrypting the user's password for Passport.js
 
 Install dependencies:
 
 ```
-$ pip install -r requirements.txt
+$ npm install
 ```
 
 Set your Google API restriction to your local IP address only and then add your Google Map API key into the moodMap.jsx file
 
     GoogleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=YourAPIKey&libraries=places`
 
-Create database 'moody':
-
-```
-$ createdb moody
-```
-
-Run seed.py in the terminal which will run model.py, create the database tables and seed the database with IMDB datasets:
-
-```
-$ python3 movie_data_seed.py
-```
-
 Run the app from the command line
 
 ```
-$ python server.py
+$ npm start
 ```
 
 ---
