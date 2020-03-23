@@ -136,10 +136,10 @@ Registered users can also remove movies from their favorites by clicking one or 
 
 Future iterations of this project will include:
 
-- Movies about particular countries, built by a text analysis tool, specifically Google’s Natural Language Machine Learning API to pattern match through movie summaries
-- Ratings and reviews by users
-- Share movie recommendations
-- Where to watch particular movies on streaming apps
+- Mobile interface for users.
+- Users and trainers receiving notifications about upcoming classes they signed up for.
+- Payment feature for users through [Stripe](https://stripe.com/docs) or [Square](https://developer.squareup.com/us/en) APIs.
+- Share user classes to social media.
 
 ---
 
