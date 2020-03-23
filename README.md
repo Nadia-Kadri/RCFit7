@@ -126,11 +126,27 @@ Utilizing the Google Maps API, users can move around the map and browse countrie
 
 #### Admin Login
 
+Admin has their own user login which gives them acces to their own profile page.
+
 ![Admin Login](https://media.giphy.com/media/H4zQN5KGhklzENooCO/giphy.gif "Admin Login")
 
 #### Admin Creating Class
 
+Admin can create classes.
+
 ![Admin Creating Class](https://media.giphy.com/media/d9BnTjOGElcrt4gpIS/giphy.gif "Admin Creating Class")
+
+#### Admin Adding Trainer
+
+Admin can add a trainer from the users that have been registered through using their email address to populate their names.
+
+![Admin Adding Trainer](https://media.giphy.com/media/STwJgRLapNtTH9C8lk/giphy.gif "Admin Adding Trainer")
+
+#### Admin Adding Trainer and Class to Schedule
+
+Admin can assign a date, class, time, and trainer to the schedule for users to view.
+
+![Admin Adding Trainer and Class to Schedule](https://media.giphy.com/media/Ribyw8bCqnVNbDgsmr/giphy.gif "Admin Adding Trainer and Class to Schedule")
 
 ### <a name="featuresforv2.0"></a> Features for V2.0
 
