@@ -2,6 +2,7 @@ import React from "react";
 import API from "../../utils/contactAPI";
 import { Link } from "react-router-dom";
 import "./contact.css";
+import MapContainer from "../../components/MapContainer";
 
 class Contact extends React.Component {
   state = {
@@ -55,7 +56,6 @@ class Contact extends React.Component {
     return (
       <React.Fragment>
         <div className="custContainer ml-5 mr-5">
-
           <div className="row">
             <div className="col-sm-12">
               <h1>Contact Us</h1>
@@ -115,7 +115,10 @@ class Contact extends React.Component {
                 </div>
 
                 <div className="button-container">
-                  <button type="submit" className="button button-primary ibSQGl">
+                  <button
+                    type="submit"
+                    className="button button-primary ibSQGl"
+                  >
                     {this.state.buttonText}
                   </button>
                   {this.state.result ? <small>{this.state.result}</small> : ""}
@@ -126,21 +129,22 @@ class Contact extends React.Component {
             <div className="col-sm-4 ml-5">
               <h4>Reach Out to Us!</h4>
               <p>
-                We'd love to hear about your progress, help with any questions, or
-                just hang out and get to know you! And don't forget to follow us
-                on social media for the latest fitness tip and events
+                We'd love to hear about your progress, help with any questions,
+                or just hang out and get to know you! And don't forget to follow
+                us on social media for the latest fitness tip and events
               </p>
               <ul>
                 <Link to="https://www.instagram.com/rcfit7/?hl=en">
-                  <i className="fab fa-instagram-square mx-2"></i>Instagram <br />
+                  <i className="fab fa-instagram-square mx-2"></i>Instagram{" "}
+                  <br />
                 </Link>
                 <Link to="https://www.facebook.com/RCFit7/">
                   <i className="fab fa-facebook-square mx-2"></i>Facebook
                 </Link>
               </ul>
             </div>
-
           </div>
+          <MapContainer />
         </div>
       </React.Fragment>
     );
