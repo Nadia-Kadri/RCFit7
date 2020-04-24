@@ -7,7 +7,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand-lg navbar-light navbar-cust bg-light index">
+        <nav className="navbar navbar-expand-lg navbar-light navbar-cust bg-light index cust-nav">
           <Link
             to="/"
             className={

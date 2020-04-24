@@ -1,9 +1,31 @@
-.custContainer {
+.masthead-schedule {
+  height: 78vh;
+  min-height: 200px;
+  background-image: url("../../images/schedule4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#masthead-text-margin {
+  margin: auto;
+}
+
+.masthead-text {
+  height: 12vh;
+}
+
+
+
+
+
+
+/* .custContainer {
   margin-bottom: 40px;
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 20px;
-}
+} */
 
 .time-sign-up {
   float: right;

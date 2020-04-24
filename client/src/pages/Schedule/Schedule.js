@@ -13,28 +13,22 @@ class Schedule extends Component {
   render() {
     return (
       <React.Fragment>
-        <section
-          style={{
-            height: 540,
-            textAlign: "center",
-            backgroundImage: `url(${headerImage2})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            paddingTop: "60px",
-            backgroundPosition: "center center",
-            overflow: "hidden",
-            position: "relative"
-          }}
-        ></section>
+        <header className="masthead-schedule">
+          <div className="container h-100"></div>
+        </header>
 
-        <div className="custContainer">
-          <div className="row">
-            <div className="col-sm-12"></div>
-          </div>
-          <div className="row justify-content-end m-4">
-            <h2>SCHEDULE</h2>
-          </div>
-          
+        <div className="masthead-text">
+          <div className="container h-100">
+            <div className="row h-100">
+              <div className="col-12" id="masthead-text-margin">
+                <h1 className="float-right">SCHEDULE</h1>
+              </div>
+            </div>
+          </div>  
+        </div>
+
+
+        <div className="container-fluid">
 
           <div className="row">
 

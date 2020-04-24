@@ -1,15 +1,14 @@
 import React from "react";
-import image from "../../images/meghan-holmes-wy_L8W0zcpI-unsplash.jpg";
+import image1 from "../../images/meghan-holmes-wy_L8W0zcpI-unsplash.jpg";
 import image2 from "../../images/bruce-mars-ZXq7xoo98b0-unsplash.jpg";
 import image3 from "../../images/adult-cutting-daylight-facial-expression-1153369.jpg";
-// import SVG2 from "../../components/SVG2";
 import "./about.css";
 
 class About extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <header className="masthead">
+        <header className="masthead-about">
           <div className="container h-100"></div>
         </header>
 
@@ -30,7 +29,7 @@ class About extends React.Component {
               <div className="row no-gutters">
                 <div className="col-md-4">
                   <img
-                    src={image}
+                    src={image1}
                     className="card-img"
                     alt="Girls doing box jumps"
                   />

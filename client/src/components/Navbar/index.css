@@ -2,6 +2,10 @@
   float: right;
 } */
 
+.cust-nav {
+  height: 90px;
+}
+
 .index {
   z-index: 3;
   font-size: 18px;
