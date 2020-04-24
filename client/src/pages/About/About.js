@@ -1,46 +1,30 @@
 import React from "react";
-import moduleName from "../../images/exercise.jpg";
 import image from "../../images/meghan-holmes-wy_L8W0zcpI-unsplash.jpg";
 import image2 from "../../images/bruce-mars-ZXq7xoo98b0-unsplash.jpg";
 import image3 from "../../images/adult-cutting-daylight-facial-expression-1153369.jpg";
-import SVG2 from "../../components/SVG2";
+// import SVG2 from "../../components/SVG2";
 import "./about.css";
 
 class About extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <section
-          style={{
-            height: 540,
-            // clear: "both",
-            textAlign: "center",
-            backgroundImage: `url(${moduleName})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            paddingTop: "60px",
-            backgroundPosition: "center center",
-            overflow: "hidden",
-            position: "relative"
-          }}
-        ></section>
-        <div className="custContainer">
-          <div className="row">
-            <div className="col-sm-12"></div>
-          </div>
-          <div className="row justify-content-end m-4">
-            <h2>WHAT RC FIT IS ABOUT</h2>
-          </div>
+        <header className="masthead">
+          <div className="container h-100"></div>
+        </header>
 
-          {/* <section style={{ padding: "0px 0px 10px 0px" }}>
-            <div className="image-w-content">
-              <div className="icon">
-                <SVG2 />
+        <div className="masthead-text">
+          <div className="container h-100">
+            <div className="row h-100">
+              <div className="col-12" id="masthead-text-margin">
+                <h1 className="float-right">WHAT RC FIT IS ABOUT</h1>
               </div>
-              <div className="images"></div>
-              <div className="cont-about"></div>
             </div>
-          </section> */}
+          </div>  
+        </div>
+
+        <div className="container-fluid">
+
           <div className="row justify-content-end">
             <div className="card mb-3" style={{ maxwidth: "100%" }}>
               <div className="row no-gutters">

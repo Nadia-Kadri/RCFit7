@@ -1,9 +1,24 @@
-.custContainer {
-  margin-bottom: 40px;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: 20px;
+.masthead {
+  height: 75vh;
+  min-height: 200px;
+  background-image: url("../../images/exercise.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+#masthead-text-margin {
+  margin: auto;
+}
+
+.masthead-text {
+  height: 15vh;
+}
+
+
+
+
+
 
 .image-w-content {
   width: 100%;
