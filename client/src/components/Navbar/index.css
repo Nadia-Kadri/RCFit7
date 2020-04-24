@@ -1,9 +1,6 @@
-/* .login-logout, .user-profile, .admin-profile {
-  float: right;
-} */
-
 .cust-nav {
   height: 90px;
+  opacity: .65;
 }
 
 .index {
@@ -15,8 +12,4 @@
   font-weight: 700;
   padding: 1.4rem 2rem;
   text-transform: uppercase;
-}
-
-.navbar-cust {
-  opacity: .65;
 }
