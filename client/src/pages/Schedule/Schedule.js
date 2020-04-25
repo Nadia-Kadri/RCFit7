@@ -1,14 +1,66 @@
 import React, { Component } from "react";
+import API from "../../utils/scheduleAPI";
+import moment from "moment"
 import UpcomingSchedules from "./UpcomingSchedules";
 import ScheduleCalendar from "./ScheduleCalendar";
 import LoginModal from "./Modals/LoginModal";
 import SignUpModal from "./Modals/SignUpModal";
 import CancelModal from "./Modals/CancelModal";
-import headerImage2 from "../../images/schedule4.jpg";
 import image from "../../images/schedule2.jpg";
 import "./index.css";
 
 class Schedule extends Component {
+
+  state = {
+    schedules: []
+  };
+
+  componentDidMount() {
+    this.getSchedules()
+  };
+
+  getSchedules = () => {
+    API.userSchedule()
+      .then(res => { 
+        let schedulesArr = []
+        for(let i = 0; i < res.data.length; i++) {
+          let isSignedUp
+          let found = res.data[i].users.some(user => user === this.props.userId)
+          found ? isSignedUp = true : isSignedUp = false
+
+          schedulesArr.push({
+            id: res.data[i]._id,
+            title: res.data[i].class.title,
+            duration: res.data[i].class.duration,
+            trainer: res.data[i].trainer.firstName,
+            datetime: new Date(res.data[i].datetime),
+            users: res.data[i].users, 
+            isSignedUp: isSignedUp
+          })
+        }
+        const signUpSchedulesArr = schedulesArr.filter(e => {return e.datetime < moment().add(7, 'days')})
+        this.setState({ schedules: signUpSchedulesArr })
+      })
+      .catch(err => console.log(err))
+  }
+
+  userSignUp = (scheduleId) => {
+    API.userSignUp(scheduleId)
+      .then(res => {
+        console.log(res)
+        this.getSchedules()
+      })
+      .catch(err => console.log(err))
+  }
+
+  userCancel = (scheduleId) => {
+    API.userCancel(scheduleId)
+      .then(res => {
+        console.log(res)
+        this.getSchedules()
+      })
+      .catch(err => console.log(err))
+  }
   
   render() {
     return (
@@ -49,7 +101,7 @@ class Schedule extends Component {
                         </tr>
                       </thead>
                       <tbody>
-                        <UpcomingSchedules userId={this.props.userId} />
+                        <UpcomingSchedules userId={this.props.userId} schedules={this.state.schedules} userSignUp={this.userSignUp} userCancel={this.userCancel} />
                       </tbody>
                     </table>
                   </div>
@@ -80,8 +132,8 @@ class Schedule extends Component {
 
         </div>
         <LoginModal />
-        <SignUpModal />
-        <CancelModal />
+        <SignUpModal getSchedules={this.getSchedules} />
+        <CancelModal getSchedules={this.getSchedules} />
       </React.Fragment>
     );
   }

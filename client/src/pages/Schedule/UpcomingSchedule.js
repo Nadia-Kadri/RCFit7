@@ -14,12 +14,11 @@ const UpcomingSchedule = (props) => (
         users={props.users}
         userId={props.userId}
         isSignedUp={props.isSignedUp}
-        onClickSignUp={props.onClickSignUp}
-        onClickCancel={props.onClickCancel}
+        userSignUp={props.userSignUp}
+        userCancel={props.userCancel}
       />
     </td>
   </tr>
 );
-
 
 export default UpcomingSchedule;
