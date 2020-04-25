@@ -6,15 +6,13 @@ var isAuthenticated = require("../../config/middleware/isAuthenticated");
 
 // Post route for Admin to create a scheduled class
 router.post("/create", function(req, res) {
-  console.log("creating schedule");
-
   db.Schedule.create({ datetime: req.body.datetime, class: req.body.class, trainer: req.body.trainer })
   .then(result => {
     db.Schedule.findOne({ _id: result._id })
     .populate("class")
     .populate("trainer")
     .then(popResult => {
-      console.log(popResult)
+      console.log("schedule created")
       res.send(popResult)
     })
     .catch(err => console.log(err.message));
@@ -24,11 +22,9 @@ router.post("/create", function(req, res) {
 
 // Delete route for Admin to delete a class
 router.delete("/delete/:id", function(req, res) {
-  console.log("deleting schedule");
-
   db.Schedule.deleteOne({ _id: req.params.id })
   .then(result => {
-    console.log(result)
+    console.log("schedule deleted")
     res.send(result)
   })
   .catch(err => console.log(err.message));
@@ -36,15 +32,13 @@ router.delete("/delete/:id", function(req, res) {
 
 // Get route for schedule to display to users and Admin
 router.get("/userView", function(req, res) {
-  console.log("view schedule");
-
   db.Schedule.find({})
   .sort({ datetime: 1 })
   .populate("class")
   .populate("trainer")
   .then(result => {
     const futureSchedules = result.filter(schedule => {return schedule.datetime > moment()})
-    console.log(futureSchedules)
+    console.log("get schedules success")
     res.send(futureSchedules)
   })
   .catch(err => console.log(err.message));
@@ -54,7 +48,7 @@ router.get("/userView", function(req, res) {
 router.put("/user/signup/:scheduleId", isAuthenticated, function(req, res) {
   db.Schedule.findOneAndUpdate({ _id: req.params.scheduleId }, { $push: { users: req.user._id } }, { new: true })
     .then(result => {
-      console.log(result)
+      console.log("user sign-up success")
       res.json(result)
     })
     .catch(err => console.log(err.message));
@@ -64,7 +58,7 @@ router.put("/user/signup/:scheduleId", isAuthenticated, function(req, res) {
 router.put("/user/cancel/:scheduleId", isAuthenticated, function(req, res) {
   db.Schedule.findOneAndUpdate({ _id: req.params.scheduleId }, { $pull: { users: req.user._id } }, { new: true })
     .then(result => {
-      console.log(result)
+      console.log("user cancel success")
       res.json(result)
     })
     .catch(err => console.log(err.message));
@@ -75,7 +69,7 @@ router.get("/admin/view/:id", function(req, res) {
   db.Schedule.findOne({ _id: req.params.id })
     .populate("users")
     .then(result => {
-      console.log(result)
+      console.log("get users signed up success")
       res.send(result)
     })
     .catch(err => console.log(err.message));

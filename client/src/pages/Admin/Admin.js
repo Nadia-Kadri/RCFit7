@@ -109,7 +109,7 @@ class Admin extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="custContainer">
+        <div className="container-fluid">
 
           <div className="row m-1">
             <div className="col-sm-12">

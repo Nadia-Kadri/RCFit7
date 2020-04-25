@@ -8,12 +8,6 @@ var isAuthenticated = require("../../config/middleware/isAuthenticated");
 router.post("/register", function(req, res) {
   console.log("registering user");
 
-  //Do password validation here before attempting to register user, such as checking for password length, captial letters, special characters, etc.
-  // let errors = [];
-  // if(!name || !email || !password || !password2) {
-  //   errors.push({ msg: 'Please fill in all fields' })
-  // }
-
   db.User.register(
     new db.User({ firstName: req.body.firstName, lastName: req.body.lastName, birthday: req.body.birthday, username: req.body.username, email: req.body.email }),
     req.body.password,
@@ -70,11 +64,9 @@ router.get("/authorized", isAuthenticated, function(req, res) {
 
 // Get route for Admin to view which trainer to select when creating a scheduled class
 router.get("/trainers", function(req, res) {
-  console.log("available trainers");
-  
   db.User.find({ isTrainer: true })
     .then(result => {
-      console.log(result)
+      console.log("get trainers success")
       res.json(result)
     })
     .catch(err => console.log(err.message));
@@ -82,19 +74,21 @@ router.get("/trainers", function(req, res) {
 
 // Put route for Admin to update a user and make them a trainer
 router.put("/create/trainer/:email", function(req, res) {
-  console.log("updating user to isTrainer: true")
-
   db.User.findOneAndUpdate({ email: req.params.email }, {$set: {isTrainer: true}})
-    .then(() => res.json("Trainer Added"))
+    .then(() => {
+      console.log("user updated to isTrainer: true")
+      res.json("user updated to isTrainer: true")
+    })
     .catch(err => console.log(err.message));
 });
 
 // Put route for Admin to update a user so they are no longer a trainer
 router.put("/delete/trainer/:id", function(req, res) {
-  console.log("updating user to isTrainer: false")
-
   db.User.findOneAndUpdate({ _id: req.params.id }, {$set: {isTrainer: false}})
-    .then(() => res.json("Trainer Deleted"))
+    .then(() => {
+      console.log("user updated to isTrainer: false")
+      res.json("user updated to isTrainer: false")
+    })
     .catch(err => console.log(err.message));
 });
 
