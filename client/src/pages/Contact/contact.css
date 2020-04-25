@@ -1,7 +1,3 @@
-
-
-
-
 form {
   display: block;
   margin-top: 0em;
@@ -125,4 +121,16 @@ div {
   padding: 0px;
   margin: 0px;
   outline: 0px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+@media (max-width: 1200px) {
+  .contact-us {
+    width: 585px;
+    margin-bottom: 40px;
+  }
 }

@@ -65,7 +65,7 @@ class Contact extends React.Component {
           </div>
 
           <div className="row">
-            <div className="col-xl-5 mr-5">
+            <div className="col-xl-5 mr-5 contact-us">
               <p>
                 We'd love to hear about your progress, help with any questions,
                 or just hang out and get to know you! And don't forget to follow
@@ -133,19 +133,20 @@ class Contact extends React.Component {
               </form>
             </div>
 
-            <div className="col-xl-6">
-              <img src={image} className="img-fluid" /><br />
-
-              <Link to="https://www.instagram.com/rcfit7/?hl=en">
-                <i className="fa fa-instagram" aria-hidden="true"></i> Instagram
-                <br />
-              </Link>
-              <Link to="https://www.facebook.com/RCFit7/">
-                <i className="fa fa-facebook-square" aria-hidden="true"></i> Facebook
-              </Link>
-              <div><i className="fa fa-map" aria-hidden="true"></i> 219 Celebration Blvd, Celebration, Florida 34747</div>
+            <div className="col-xl-6 contact-us">
+              <img src={image} className="img-fluid mb-1" />
+              <div className="mb-3">
+                <i className="fa fa-map" aria-hidden="true"></i> 219 Celebration Blvd, Celebration, Florida 34747
+              </div>
+      
               <div><i className="fa fa-phone" aria-hidden="true"></i> (321) 278-6523</div>
               <div><i className="fa fa-envelope" aria-hidden="true"></i> rcfit7@gmail.com</div>
+              <div>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/rcfit7/?hl=en" className="text-dark"><i className="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+              </div>
+              <div>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/RCFit7/" className="text-dark"><i className="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a>
+              </div>
             </div>
 
           </div>
