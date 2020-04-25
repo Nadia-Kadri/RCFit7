@@ -16,7 +16,7 @@ class About extends React.Component {
           <div className="container h-100">
             <div className="row h-100">
               <div className="col-12" id="masthead-text-margin">
-                <h1 className="float-right">WHAT RC FIT IS ABOUT</h1>
+                <h1 className="float-right">WHAT RC FIT IS ABOUT <i className="fa fa-angle-double-down" aria-hidden="true"></i></h1>
               </div>
             </div>
           </div>  

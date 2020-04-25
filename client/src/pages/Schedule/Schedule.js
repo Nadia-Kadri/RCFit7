@@ -73,7 +73,7 @@ class Schedule extends Component {
           <div className="container h-100">
             <div className="row h-100">
               <div className="col-12" id="masthead-text-margin">
-                <h1 className="float-right">SCHEDULE</h1>
+                <h1 className="float-right">SCHEDULE <i className="fa fa-angle-double-down" aria-hidden="true"></i></h1>
               </div>
             </div>
           </div>  

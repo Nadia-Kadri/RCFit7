@@ -2,6 +2,7 @@ import React from "react";
 import API from "../../utils/contactAPI";
 import { Link } from "react-router-dom";
 import "./contact.css";
+import image from "../../images/contact.png"
 import MapContainer from "../../components/MapContainer";
 
 class Contact extends React.Component {
@@ -55,15 +56,21 @@ class Contact extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="custContainer ml-5 mr-5">
-          <div className="row">
+
+        <div className="container-fluid">
+          <div className="row m-1">
             <div className="col-sm-12">
               <h1>Contact Us</h1>
             </div>
           </div>
 
           <div className="row">
-            <div className="col-sm-4 mr-5">
+            <div className="col-xl-5 mr-5">
+              <p>
+                We'd love to hear about your progress, help with any questions,
+                or just hang out and get to know you! And don't forget to follow
+                us on social media for the latest fitness tip and events
+              </p>
               <form
                 className="contact-form cust-form"
                 onSubmit={e => this.formSubmit(e)}
@@ -126,25 +133,25 @@ class Contact extends React.Component {
               </form>
             </div>
 
-            <div className="col-sm-4 ml-5">
-              <h4>Reach Out to Us!</h4>
-              <p>
-                We'd love to hear about your progress, help with any questions,
-                or just hang out and get to know you! And don't forget to follow
-                us on social media for the latest fitness tip and events
-              </p>
-              <ul>
-                <Link to="https://www.instagram.com/rcfit7/?hl=en">
-                  <i className="fab fa-instagram-square mx-2"></i>Instagram{" "}
-                  <br />
-                </Link>
-                <Link to="https://www.facebook.com/RCFit7/">
-                  <i className="fab fa-facebook-square mx-2"></i>Facebook
-                </Link>
-              </ul>
+            <div className="col-xl-6">
+              <img src={image} className="img-fluid" /><br />
+
+              <Link to="https://www.instagram.com/rcfit7/?hl=en">
+                <i className="fa fa-instagram" aria-hidden="true"></i> Instagram
+                <br />
+              </Link>
+              <Link to="https://www.facebook.com/RCFit7/">
+                <i className="fa fa-facebook-square" aria-hidden="true"></i> Facebook
+              </Link>
+              <div><i className="fa fa-map" aria-hidden="true"></i> 219 Celebration Blvd, Celebration, Florida 34747</div>
+              <div><i className="fa fa-phone" aria-hidden="true"></i> (321) 278-6523</div>
+              <div><i className="fa fa-envelope" aria-hidden="true"></i> rcfit7@gmail.com</div>
             </div>
+
           </div>
-          <MapContainer />
+
+          {/* <MapContainer /> */}
+
         </div>
       </React.Fragment>
     );
