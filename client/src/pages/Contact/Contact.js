@@ -12,9 +12,9 @@ const Contact = () => {
     email: "",
     sent: false,
     error: false
-  })
+  });
 
-  const {name, email, message, sent, error} = contact
+  const {name, email, message, sent, error} = contact;
 
   const onChange = (e) => {
     setContact({...contact, 

@@ -9,7 +9,7 @@ function Home({ logout }) {
     <React.Fragment>
       <header className="v-header cont">
         <div className="fullscreen-video-wrap">
-          <video src={mov} autoplay="true" loop="true"></video>
+          <video src={mov} autoPlay={true} loop={true}></video>
         </div>
         <div className="header-overlay"></div>
         <div className="header-content">
@@ -24,7 +24,7 @@ function Home({ logout }) {
         </Link>
       </header>
 
-      <div className="container">
+      <div className="container wrap">
         <div className="row rowmove">
           <div className="col-sm-6">
             <div className="row no-gutters  rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
