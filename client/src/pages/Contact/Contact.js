@@ -1,59 +1,50 @@
-import React from "react";
-import API from "../../utils/contactAPI";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import "./contact.css";
 import image from "../../images/contact.png"
 import MapContainer from "../../components/MapContainer";
+import axios from "axios";
 
-class Contact extends React.Component {
-  state = {
+const Contact = () => {
+  const [contact, setContact] = useState({
     name: "",
     message: "",
     email: "",
-    buttonText: "Send Message",
     sent: false,
-    result: "",
-    error: ""
-  };
+    error: false
+  })
 
-  formSubmit = e => {
+  const {name, email, message, sent, error} = contact
+
+  const onChange = (e) => {
+    setContact({...contact, 
+    [e.target.name]: e.target.value})
+  }
+
+  const formSubmit = async e => {
     e.preventDefault();
-    this.setState({
-      buttonText: "...sending"
-    });
+    setContact({sent: true})
 
-    let mailer = {
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message
-    };
+   const form = await axios.post("/api/send" ,
+     {name,
+     email,
+     message}
+   )
+      console.log(form);
 
-    API.send({ mailer })
-      .then(res => {
-        if (res.data.message) {
-          this.setState(
-            { sent: true, result: res.data.message },
-            this.resetForm()
-          );
-        } else {
-          this.setState({ error: "Message did not send." });
-        }
-      })
-      .catch(() => {
-        console.log("Message not sent");
-      });
+      resetForm();
   };
 
-  resetForm = () => {
-    this.setState({
+ const resetForm = () => {
+    setContact({
       name: "",
       message: "",
       email: "",
-      buttonText: "Message Sent"
+      sent: false,
+      error: false
     });
   };
 
-  render() {
     return (
       <React.Fragment>
 
@@ -73,7 +64,7 @@ class Contact extends React.Component {
               </p>
               <form
                 className="contact-form cust-form"
-                onSubmit={e => this.formSubmit(e)}
+                onSubmit={formSubmit}
                 method="POST"
                 action="send"
               >
@@ -82,12 +73,12 @@ class Contact extends React.Component {
                     Your Name
                   </label>
                   <input
-                    onChange={e => this.setState({ name: e.target.value })}
+                    onChange={onChange}
                     name="name"
                     className="message-name cpYcEZ border-bottom"
                     type="text"
                     placeholder="Your Name"
-                    value={this.state.name}
+                    value={name}
                   />
                 </div>
 
@@ -96,13 +87,13 @@ class Contact extends React.Component {
                     Your Email
                   </label>
                   <input
-                    onChange={e => this.setState({ email: e.target.value })}
+                    onChange={onChange}
                     name="email"
                     className="message-email cpYcEZ border-bottom"
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder="Your@email.com"
                     required
-                    value={this.state.email}
+                    value={email}
                   />
                 </div>
 
@@ -111,12 +102,12 @@ class Contact extends React.Component {
                     Your Message
                   </label>
                   <textarea
-                    onChange={e => this.setState({ message: e.target.value })}
+                    onChange={onChange}
                     name="message"
                     className="message-input eJFNDT border-bottom"
                     type="text"
                     placeholder="Please write your message here"
-                    value={this.state.message}
+                    value={message}
                     required
                   />
                 </div>
@@ -126,9 +117,9 @@ class Contact extends React.Component {
                     type="submit"
                     className="button button-primary ibSQGl"
                   >
-                    {this.state.buttonText}
+                    {sent === false ? "Send Message" : "Sending Message!"}
                   </button>
-                  {this.state.result ? <small>{this.state.result}</small> : ""}
+                  {error === true ? <small>There was a problem sending your message</small> : ""}
                 </div>
               </form>
             </div>
@@ -140,7 +131,11 @@ class Contact extends React.Component {
               </div>
       
               <div><i className="fa fa-phone" aria-hidden="true"></i> (321) 278-6523</div>
-              <div><i className="fa fa-envelope" aria-hidden="true"></i> rcfit7@gmail.com</div>
+              <div>
+                <a target="_blank" href="mailto:rcfit7@gmail.com">
+                <i className="fa fa-envelope" aria-hidden="true"></i> rcfit7@gmail.com
+                </a>
+                </div>
               <div>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/rcfit7/?hl=en" className="text-dark"><i className="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
               </div>
@@ -157,6 +152,6 @@ class Contact extends React.Component {
       </React.Fragment>
     );
   }
-}
+
 
 export default Contact;

@@ -1,43 +1,44 @@
 const express = require("express");
 const router = express.Router();
+const nodemailer = require("nodemailer");
+
 
 // Nodemailer Route
-router.get("/", (req, res) => {
-  res.render("client");
-});
 
 router.post("/send", (req, res) => {
-  var data = req.body;
+  const data = req.body;
   console.log(data);
+  console.log("Message has been sent");
 
-  var smtpTransport = nodemailer.createTransport({
-    service: "Gmail",
-    port: 465,
+  const transporter = nodemailer.createTransport({
+    host: "smtp.mailtrap.io",
+    port: 2525,
     auth: {
-      user: "wooffte@gmail.com",
-      pass: "4072019975"
+      user: "d4f7a84c19633c",
+      pass: "1f30cb15700b57"
     }
   });
 
-  var mailOptions = {
+  let mailOptions = {
     from: data.email,
-    to: "kingffte@gmail.com",
-    subject: "ENTER_YOUR_SUBJECT",
+    to: "rcfit7@gmail.com",
+    subject: data.subject ? data.subject : "",
     html: `<ul>
-            <li>Name: ${data.name}</li>
-            <li>Email: ${data.email}</li>
+            <li style="list-style: none;">Name: ${data.name}</li>
+            <li style="list-style: none;">Email: ${data.email}</li>
             </ul>
+
             <h3>Message:<h3>
             <p>${data.message}</p>`
   };
 
-  smtpTransport.sendMail(mailOptions, (error, response) => {
+  transporter.sendMail(mailOptions, (error, response) => {
     if (error) {
       res.send(error);
     } else {
-      res.json({ message: "Message was sent successfully!" });
+      res.json({ message: "" });
     }
-    smtpTransport.close();
+    transporter.close();
   });
 });
 
