@@ -15,7 +15,7 @@ function Home({ logout }) {
         <div className="header-content">
           <h3 className="text-center">LIFT EACH OTHER UP</h3>
         </div>
-        <Link className="header-link" to="/about">
+        <Link className="header-link" to="/schedule">
           <span>
             <button className="btn button-style">
               START YOUR JOURNEY HERE

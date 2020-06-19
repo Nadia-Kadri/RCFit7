@@ -26,11 +26,11 @@ class Navbar extends React.Component {
                 </span>
               </Link>
 
-              <Link to="/about" className="nav-link border-right">
+              {/* <Link to="/about" className="nav-link border-right">
                 <span className="float-right text">
                   About <span className="sr-only">(current)</span>
                 </span>
-              </Link>
+              </Link> */}
 
               <Link to="/schedule" className="nav-link border-right">
                 <span className="float-right text">

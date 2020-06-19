@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
-import About from "./pages/About/About";
+// import About from "./pages/About/About";
 import Schedule from "./pages/Schedule/Schedule";
 import Contact from "./pages/Contact/Contact";
 import UserProfile from "./pages/UserProfile/UserProfile";
@@ -92,9 +92,9 @@ class App extends Component {
                   )}
               </Route>
 
-              <Route exact path="/about">
+              {/* <Route exact path="/about">
                 <About />
-              </Route>
+              </Route> */}
 
               <Route exact path="/schedule">
                 <Schedule userId={this.state.userId} />
