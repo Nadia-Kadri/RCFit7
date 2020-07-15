@@ -47,7 +47,11 @@
   }
   .upcomingLeft {
     height: 475px;
-    overflow: scroll;
+    /* overflow: scroll; */
+  }
+  .bleachers {
+    max-width: 100px;
+    max-height: 100%;
   }
 }
 
@@ -61,9 +65,13 @@
   }
   .upcomingLeft {
     height: 405px;
-    overflow: scroll;
+    /* overflow: scroll; */
   }
   .cal_spacing {
     margin: 0;
+  }
+  .bleachers {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
