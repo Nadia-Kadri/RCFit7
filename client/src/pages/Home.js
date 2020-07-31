@@ -9,13 +9,7 @@ function Home({ logout }) {
     <React.Fragment>
       <header className="v-header cont">
         <div className="fullscreen-video-wrap">
-          <video
-            src={mov}
-            autoPlay={true}
-            loop={true}
-            playsInline
-            muted
-          ></video>
+          <video src={mov} autoPlay={true} loop={true}></video>
         </div>
         <div className="header-overlay"></div>
         <div className="header-content">
