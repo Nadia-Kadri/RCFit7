@@ -120,7 +120,13 @@ class Schedule extends Component {
               </div>
             </div>
 
-            <img src={image} className="col-sm-5 mb-3" />
+            <div className="col-sm-5 mb-3">
+              <img
+                src={image}
+                className="bleachers"
+                alt="Nike Girl Doing Bleachers"
+              />
+            </div>
           </div>
 
           <div className="row">

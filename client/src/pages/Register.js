@@ -16,8 +16,10 @@ class Register extends Component {
     validPW: false,
     validCF: false,
     error: "",
+
     // eslint-disable-next-line
     reg: new RegExp(
+      // eslint-disable-next-line
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     )
   };
@@ -113,7 +115,7 @@ class Register extends Component {
                       name="firstName"
                       value={this.state.firstName}
                       onChange={this.handleInputChange}
-                      />
+                    />
                   </div>
                 </div>
                 <div className="col-sm-6">
@@ -159,7 +161,11 @@ class Register extends Component {
                       value={this.state.email}
                       onChange={this.handleInputChange}
                     />
-                    {this.state.validEM ? <small>Email is valid</small> : <small>Email is invalid</small>}
+                    {this.state.validEM ? (
+                      <small>Email is valid</small>
+                    ) : (
+                      <small>Email is invalid</small>
+                    )}
                   </div>
                 </div>
                 <div className="col-sm-6">
@@ -173,7 +179,11 @@ class Register extends Component {
                       value={this.state.username}
                       onChange={this.handleInputChange}
                     />
-                    {this.state.validUN ? <small>Username is available</small> : <small>Username is not available</small>}
+                    {this.state.validUN ? (
+                      <small>Username is available</small>
+                    ) : (
+                      <small>Username is not available</small>
+                    )}
                   </div>
                 </div>
               </div>
@@ -190,7 +200,11 @@ class Register extends Component {
                       value={this.state.password}
                       onChange={this.handleInputChange}
                     />
-                    {this.state.validPW ? <small>Password is valid</small> : <small>Password must be at least 8 characters</small>}
+                    {this.state.validPW ? (
+                      <small>Password is valid</small>
+                    ) : (
+                      <small>Password must be at least 8 characters</small>
+                    )}
                   </div>
                 </div>
                 <div className="col-sm-6">
@@ -203,24 +217,32 @@ class Register extends Component {
                       value={this.state.confirm}
                       onChange={this.handleInputChange}
                     />
-                    {this.state.validCF ? <small>Passwords match</small> : <small>Passwords don't match</small>}
+                    {this.state.validCF ? (
+                      <small>Passwords match</small>
+                    ) : (
+                      <small>Passwords don't match</small>
+                    )}
                   </div>
-                    {this.state.error ? <small>{this.state.error}</small>  : ""}
+                  {this.state.error ? <small>{this.state.error}</small> : ""}
                 </div>
               </div>
-              
+
               <div className="row">
                 <div className="col-sm-12">
                   <div className="form-group">
-                    <button 
+                    <button
                       className="btn btn-primary"
                       disabled={
-                        this.state.validUN && this.state.validEM && this.state.validCF
+                        this.state.validUN &&
+                        this.state.validEM &&
+                        this.state.validCF
                           ? ""
                           : "disabled"
                       }
                       onClick={this.register}
-                    >Submit</button>
+                    >
+                      Submit
+                    </button>
                     <br></br>
                     <Link to="/login">Already registered? Click here.</Link>
                   </div>
@@ -237,6 +259,6 @@ class Register extends Component {
 const contStyle = {
   marginTop: "20px",
   width: "650px"
-}
+};
 
 export default Register;
