@@ -11,10 +11,6 @@
   margin: auto;
 }
 
-#masthead-text-margin h1 {
-  float: right;
-}
-
 .masthead-text {
   height: 12vh;
 }
@@ -23,47 +19,11 @@
   float: right;
 }
 
-.time,
-.sign-up-button {
+.time, .sign-up-button {
   font-size: 13px;
 }
 
 .upcomingLeft {
   height: 740px;
   overflow-y: scroll;
-}
-
-.cal_spacing {
-  margin: 20px 0;
-}
-
-@media (max-width: 400px) {
-  .masthead-schedule {
-    height: 30vh;
-  }
-  #masthead-text-margin h1 {
-    float: none;
-    text-align: center;
-  }
-  .upcomingLeft {
-    height: 475px;
-    overflow: scroll;
-  }
-}
-
-@media (max-width: 812px) {
-  .masthead-schedule {
-    height: 30vh;
-  }
-  #masthead-text-margin h1 {
-    float: none;
-    text-align: center;
-  }
-  .upcomingLeft {
-    height: 405px;
-    overflow: scroll;
-  }
-  .cal_spacing {
-    margin: 0;
-  }
 }
