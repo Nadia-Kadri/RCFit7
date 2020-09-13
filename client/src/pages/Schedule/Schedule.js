@@ -34,6 +34,7 @@ class Schedule extends Component {
             duration: res.data[i].class.duration,
             trainer: res.data[i].trainer.firstName,
             datetime: new Date(res.data[i].datetime),
+            datetimeEnd: moment(new Date(res.data[i].datetime), "YYYY-MM-DDTHH:mm:ss.SSSZ").add(res.data[i].class.duration, 'minutes'),
             users: res.data[i].users, 
             isSignedUp: isSignedUp
           })
@@ -84,32 +85,69 @@ class Schedule extends Component {
 
           <div className="row">
 
-            <div className="col-sm-7">
+            <div className="col-lg-7">
               <div className="card bg-light mb-3 custCard upcomingLeft">
                 <div className="card-body">
                   <h4 className="card-title">Upcoming Classes</h4>
                   <div className="card-text">
-                    <h6>Below are this week's upcoming classes, click Sign-Up to reserve your spot!</h6>
-                    <table className="table table-hover table-sm">
-                      <thead>
-                        <tr>
-                          <th scope="col">Class</th>
-                          <th scope="col">Time</th>
-                          <th scope="col">Duration</th>
-                          <th scope="col">Trainer</th>
-                          <th scope="col">Sign-Up/Cancel</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <UpcomingSchedules userId={this.props.userId} schedules={this.state.schedules} userSignUp={this.userSignUp} userCancel={this.userCancel} />
-                      </tbody>
-                    </table>
+                  <h6>Below are this week's upcoming classes, click Sign-Up to reserve your spot!</h6>
+
+                  <div className="upcomingClassesTitle">{moment().format("dddd, MMMM Do")}</div>
+                  <table className="table table-hover table-sm">
+                    <tbody>
+                      <UpcomingSchedules userId={this.props.userId} schedules={this.state.schedules} userSignUp={this.userSignUp} userCancel={this.userCancel} tableDate={moment().format("MMDDYY")}/>
+                    </tbody>
+                  </table>
+
+                  <div className="upcomingClassesTitle">{moment().add(1, 'days').format("dddd, MMMM Do")}</div>
+                  <table className="table table-hover table-sm">
+                    <tbody>
+                      <UpcomingSchedules userId={this.props.userId} schedules={this.state.schedules} userSignUp={this.userSignUp} userCancel={this.userCancel} tableDate={moment().add(1, 'days').format("MMDDYY")}/>
+                    </tbody>
+                  </table>
+
+                  <div className="upcomingClassesTitle">{moment().add(2, 'days').format("dddd, MMMM Do")}</div>
+                  <table className="table table-hover table-sm">
+                    <tbody>
+                      <UpcomingSchedules userId={this.props.userId} schedules={this.state.schedules} userSignUp={this.userSignUp} userCancel={this.userCancel} tableDate={moment().add(2, 'days').format("MMDDYY")}/>
+                    </tbody>
+                  </table>
+
+                  <div className="upcomingClassesTitle">{moment().add(3, 'days').format("dddd, MMMM Do")}</div>
+                  <table className="table table-hover table-sm">
+                    <tbody>
+                      <UpcomingSchedules userId={this.props.userId} schedules={this.state.schedules} userSignUp={this.userSignUp} userCancel={this.userCancel} tableDate={moment().add(3, 'days').format("MMDDYY")}/>
+                    </tbody>
+                  </table>
+
+                  <div className="upcomingClassesTitle">{moment().add(4, 'days').format("dddd, MMMM Do")}</div>
+                  <table className="table table-hover table-sm">
+                    <tbody>
+                      <UpcomingSchedules userId={this.props.userId} schedules={this.state.schedules} userSignUp={this.userSignUp} userCancel={this.userCancel} tableDate={moment().add(4, 'days').format("MMDDYY")}/>
+                    </tbody>
+                  </table>
+
+                  <div className="upcomingClassesTitle">{moment().add(5, 'days').format("dddd, MMMM Do")}</div>
+                  <table className="table table-hover table-sm">
+                    <tbody>
+                      <UpcomingSchedules userId={this.props.userId} schedules={this.state.schedules} userSignUp={this.userSignUp} userCancel={this.userCancel} tableDate={moment().add(5, 'days').format("MMDDYY")}/>
+                    </tbody>
+                  </table>
+
+                  <div className="upcomingClassesTitle">{moment().add(6, 'days').format("dddd, MMMM Do")}</div>
+                  <table className="table table-hover table-sm">
+                    <tbody>
+                      <UpcomingSchedules userId={this.props.userId} schedules={this.state.schedules} userSignUp={this.userSignUp} userCancel={this.userCancel} tableDate={moment().add(6, 'days').format("MMDDYY")}/>
+                    </tbody>
+                  </table>
+                    
+                      
                   </div>
                 </div>
               </div>
             </div>
 
-            <img src={image} className="col-sm-5 mb-3"/>
+            <img src={image} className="col-lg-5 mb-3"/>
           </div> 
 
           <div className="row">

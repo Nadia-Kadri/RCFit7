@@ -31,14 +31,6 @@ const User = new Schema({
     unique: true,
     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email address']
   },
-  membership: {
-    type: Schema.Types.ObjectId,
-    ref: "Membership",
-  },
-  membershipStatus: {
-    type: Boolean,
-    default: false
-  },
   created: { type: Date, required: true, default: Date.now() },
 });
 
