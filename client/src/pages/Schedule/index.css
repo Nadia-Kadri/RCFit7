@@ -24,12 +24,49 @@
 }
 
 .upcomingLeft {
-  height: 740px;
+  height: 80vh;
   overflow-y: scroll;
+}
+
+.upcomingRight {
+  height: 80vh;
 }
 
 .upcomingClassesTitle {
   margin-top: 10px;
   margin-bottom: 10px;
   font-weight: bold;
+}
+
+.textContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: bold;
+}
+
+.textThree, .textOne{
+  font-size: 30px;
+}
+
+.textTwo,.textFour {
+  font-size: 35px;
+}
+
+.textFour {
+  color: rgb(13, 96, 239);
+  font-style: italic;
+}
+
+#textYou {
+  color: rgb(13, 96, 239);
+}
+
+#textBelieve {
+  font-size: 35px;
+  color: rgb(13, 96, 239);
 }

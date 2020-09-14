@@ -6,7 +6,7 @@ import ScheduleCalendar from "./ScheduleCalendar";
 import LoginModal from "./Modals/LoginModal";
 import SignUpModal from "./Modals/SignUpModal";
 import CancelModal from "./Modals/CancelModal";
-import image from "../../images/schedule2.jpg";
+// import image from "../../images/schedule2.jpg";
 import "./index.css";
 
 class Schedule extends Component {
@@ -22,11 +22,11 @@ class Schedule extends Component {
   getSchedules = () => {
     API.userSchedule()
       .then(res => { 
-        let schedulesArr = []
+        let schedulesArr = [];
         for(let i = 0; i < res.data.length; i++) {
-          let isSignedUp
-          let found = res.data[i].users.some(user => user === this.props.userId)
-          found ? isSignedUp = true : isSignedUp = false
+          let isSignedUp;
+          let found = res.data[i].users.some(user => user === this.props.userId);
+          found ? isSignedUp = true : isSignedUp = false;
 
           schedulesArr.push({
             id: res.data[i]._id,
@@ -37,13 +37,13 @@ class Schedule extends Component {
             datetimeEnd: moment(new Date(res.data[i].datetime), "YYYY-MM-DDTHH:mm:ss.SSSZ").add(res.data[i].class.duration, 'minutes'),
             users: res.data[i].users, 
             isSignedUp: isSignedUp
-          })
-        }
+          });
+        };
         const signUpSchedulesArr = schedulesArr.filter(e => {return e.datetime < moment().add(7, 'days')})
-        this.setState({ schedules: signUpSchedulesArr })
+        this.setState({ schedules: signUpSchedulesArr });
       })
-      .catch(err => console.log(err))
-  }
+      .catch(err => console.log(err));
+  };
 
   userSignUp = (scheduleId) => {
     API.userSignUp(scheduleId)
@@ -52,7 +52,7 @@ class Schedule extends Component {
         this.getSchedules()
       })
       .catch(err => console.log(err))
-  }
+  };
 
   userCancel = (scheduleId) => {
     API.userCancel(scheduleId)
@@ -61,7 +61,7 @@ class Schedule extends Component {
         this.getSchedules()
       })
       .catch(err => console.log(err))
-  }
+  };
   
   render() {
     return (
@@ -147,7 +147,14 @@ class Schedule extends Component {
               </div>
             </div>
 
-            <img src={image} className="col-lg-5 mb-3"/>
+            <div className="col-lg-5 upcomingRight">
+              <div className="textContainer">
+                <div className="textOne"><span id="textBelieve">BELIEVE</span> IN</div>
+                <div className="textTwo">YOURSELF</div>
+                <div className="textThree">AND <span id="textYou">YOU</span> WILL BE</div>
+                <div className="textFour">UNSTOPPABLE</div>
+              </div>
+            </div>
           </div> 
 
           <div className="row">
