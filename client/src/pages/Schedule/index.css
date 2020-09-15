@@ -70,3 +70,7 @@
   font-size: 35px;
   color: rgb(13, 96, 239);
 }
+
+.sign-up-button {
+  float: right;
+}
