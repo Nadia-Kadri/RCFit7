@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 
-
 // Nodemailer Route
 
 router.post("/send", (req, res) => {
@@ -40,6 +39,14 @@ router.post("/send", (req, res) => {
     }
     transporter.close();
   });
+});
+
+router.get("/googleapikey", (req, res) => {
+  let apikey = process.env.GOOGLE_APIKEY;
+  apikey.toString();
+  res.send(apikey);
+  // res.json(JSON.stringify(apikey));
+  console.log(apikey);
 });
 
 module.exports = router;

@@ -1,3 +1,21 @@
+.contact_cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin: 25px;
+}
+
+.contact-us {
+  display: grid;
+  width: 100%;
+  height: 5vh;
+  position: relative;
+}
+
+.contact-us img {
+  width: inherit;
+}
+
 form {
   display: block;
   margin-top: 0em;
@@ -127,10 +145,15 @@ a:hover {
   text-decoration: none;
 }
 
-
 @media (max-width: 1200px) {
   .contact-us {
-    width: 585px;
+    width: 100%;
     margin-bottom: 40px;
+    position: relative;
+    display: table;
+  }
+
+  .contact-us img {
+    width: inherit;
   }
 }

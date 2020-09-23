@@ -8,7 +8,13 @@ const PORT = process.env.PORT || 3001;
 require("dotenv").config();
 const session = require("express-session");
 const passport = require("./config/passport");
-app.use(session({ secret: process.env.PASSPORT_SECRET, resave: true, saveUninitialized: true }));
+app.use(
+  session({
+    secret: process.env.PASSPORT_SECRET,
+    resave: true,
+    saveUninitialized: true
+  })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -23,10 +29,15 @@ if (process.env.NODE_ENV === "production") {
 // Connect to the Mongo DB
 const options = {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 };
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/RCFit7", options); 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://rcfit7:root123@ds121686.mlab.com:21686/heroku_4fgzs0nx", options); 
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/RCFit7",
+  options
+);
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://rcfit7:root123@ds121686.mlab.com:21686/heroku_4fgzs0nx", options);
+// "mongodb://rcfit7partner:Lifteachotherup7*@ds121686.mlab.com:21686/heroku_4fgzs0nx",
 
 // ROUTES
 app.use(routes);
