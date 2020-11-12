@@ -36,8 +36,6 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/RCFit7",
   options
 );
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://rcfit7:root123@ds121686.mlab.com:21686/heroku_4fgzs0nx", options);
-// "mongodb://rcfit7partner:Lifteachotherup7*@ds121686.mlab.com:21686/heroku_4fgzs0nx",
 
 // ROUTES
 app.use(routes);

@@ -249,8 +249,12 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 160px;
+    top: 100px;
     gap: 20px;
+  }
+
+  .header-link {
+    margin: 20px 0;
   }
 
   h3 span {
@@ -262,7 +266,7 @@ body {
   .wrap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    top: 250px;
+    top: 350px;
   }
   .rowmove {
     margin: 0;
